@@ -20,6 +20,9 @@ menu:
     External: false
     name: 关于
 
+# 首页是否显示封面图片
+showFeatureImage: true
+
 # 首页头像图片
 avatar: /images/avatar.png
 

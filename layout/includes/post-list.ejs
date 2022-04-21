@@ -1,0 +1,47 @@
+<% page.posts.forEach(function(post) { %>
+<% if (post.hide != true)  { %> <!-- 隐藏某个文章 -->
+<section class="post-item">
+    <div class="content">
+      <a href="<%- url_for(post.path) %>">
+        <h2 class="post-title"><%= post.title %></h2>
+      </a>
+      <div class="post-abstract">
+        <%- post.excerpt %>
+      </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> <%= date(post.date, config.date_format) %></span>
+        <% if (post.tags && post.tags.length > 0) { %>
+          <span>
+            <i class="icon icon-pricetags-outline"></i>
+            <% post.tags.forEach(function(tag, index) { %>
+              <a href="<%= tag.link %>">
+                <%= tag.name %>
+                <% if (index !== post.tags.length - 1) { %>
+                  ，
+                <% } %>
+              </a>
+            <% }); %>
+          </span>
+        <% } %>
+      </div>
+    </div>
+    <% if (theme.showFeatureImage && post.photos) { %>
+      <a href="<%= post.link %>">
+        <div class="feature-container" style="background-image: url('<%= post.feature %>')">
+        </div>
+      </a>
+    <% } %>
+  </section>
+<% } %>  <!-- 隐藏某个文章 -->
+<% }); %>
+
+<% if (page.total > 1) { %>
+    <div class="pagination-container">
+      <% if (pagination.prev) { %>
+        <a href="<%- url_for(page.prev_link) %>" class="prev"><i class="icon-arrow-ios-back-outline"></i> 上一页</a>
+      <% } %>
+      <% if (pagination.next) { %>
+        <a href="<%- url_for(page.next_link) %>" class="next">下一页 <i class="icon-arrow-ios-forward-outline"></i></a>
+      <% } %>
+    </div>
+<% } %>
