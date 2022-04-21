@@ -1,0 +1,35 @@
+<div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="<%= config.url %>">
+        <img class="avatar" src="<%= theme.avatar %>" alt="" width="32px" height="32px">
+      </a>
+      <a href="<%= config.url %>">
+        <h1 class="site-title"><%= config.title %></h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      <% Object.keys(theme.menu).forEach(function(key) { %>
+        <% if (theme.menu[key].openType === 'External') { %>
+          <a class="menu purple-link" href="<%= theme.menu[key].link %>" class="menu" target="_blank">
+            <%= theme.menu[key].name %>
+          </a>
+        <% } else { %>
+          <a href="<%= theme.menu[key].link %>" class="menu purple-link">
+            <%= theme.menu[key].name %>
+          </a>
+        <% } %>
+      <% }); %>
+    </div>
+  </div>
+</transition>

@@ -1,0 +1,36 @@
+<html lang="<%= config.language %>">
+  <head>
+
+    <meta charset="utf-8" >
+
+    <title><%= siteTitle %></title>
+    <meta name="description" content="<%= config.description %>">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/style/animate.min.css">
+
+    <link rel="stylesheet" href="/style/fontawesome.css">
+    <link rel="shortcut icon" href="<%= config.url %>/favicon.ico">
+    <link rel="stylesheet" href="/style/katex.min.css">
+    <link rel="stylesheet" href="/style/main.css">
+
+    <% if (theme.gitalk.enable) { %>
+        <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/gitalk/1.7.2/gitalk.css" />
+    <% } %>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+
+    <% if (theme.ga) { %>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=<%= theme.ga %>"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', '<%= theme.ga %>');
+    </script>
+    <% } %>
+  </head>
+  <body>

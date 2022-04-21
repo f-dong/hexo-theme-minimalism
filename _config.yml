@@ -1,0 +1,31 @@
+menu:
+  Index:
+    url: /
+    External: false
+    name: 首页
+  Tags:
+    url: /tags
+    External: false
+    name: 标签
+  Categories:
+    url: /categories
+    External: false
+    name: 分类
+  Archives:
+    url: /archives
+    External: false
+    name: 归档
+  About:
+    url: /about
+    External: false
+    name: 关于
+
+# 首页头像图片
+avatar: /images/avatar.png
+
+# 谷歌统计 跟踪 ID
+ga:
+
+#
+gitalk:
+  enable: true
