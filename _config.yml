@@ -20,6 +20,14 @@ menu:
     External: false
     name: 关于
 
+# 联系方式
+contact:
+  github: "https://github.com/f-dong"
+  twitter:
+  weibo:
+  zhihu:
+  facebook:
+
 # 首页是否显示封面图片
 showFeatureImage: true
 
@@ -29,6 +37,20 @@ avatar: /images/avatar.png
 # 谷歌统计 跟踪 ID
 ga:
 
-#
+# Gittalk 评论组件
+# See: https://github.com/gitalk/gitalk/
 gitalk:
-  enable: true
+  enable: false
+  clientId:
+  clientSecret:
+  repository:
+  owner:
+
+#ICP备案信息尾部显示
+icp:
+  enable: false
+  url: # 备案链接
+  text: # 备案信息
+
+# 是否使用 bootcdn
+use_bootcdn: true
