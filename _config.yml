@@ -46,11 +46,20 @@ gitalk:
   repository:
   owner:
 
-#ICP备案信息尾部显示
-icp:
-  enable: false
-  url: # 备案链接
-  text: # 备案信息
-
 # 是否使用 bootcdn
 use_bootcdn: true
+
+# 底部链接
+bottom_link:
+  icp:
+    url:
+    text: RSS
+    class: rss
+  rss:
+    url: # beian.miit.gov.cn
+    text: # 沪ICP备 09007032号-1
+    class: icp
+
+# 底部显示来源信息
+bottom_source:
+  enable: true

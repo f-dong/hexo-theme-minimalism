@@ -9,11 +9,15 @@
       <% } %>
     <% }) %>
   </div>
-  Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-  <% if (theme.icp.enable) { %>
-      <div id="icp">
-          <img src="<%- config.url %>/images/icp.png" style="vertical-align: text-bottom;"/>
-          <a href="<%- url_for(theme.icp.url) %>" target="_blank"><%= theme.icp.text %></a>
-      </div>
+  <% if (theme.bottom_source.enable) { %>
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
   <% } %>
+  <% Object.keys(theme.bottom_link).forEach(function(key) { %>
+  <% if (theme.bottom_link[key].url && theme.bottom_link[key].text) { %>
+    <% if (theme.bottom_source.enable || show_divide) { %>
+     |
+    <% } else {var show_divide = true} %>
+      <a class="<%= theme.bottom_link[key].class %>" href="<%- theme.bottom_link[key].url %>" target="_blank"><%- theme.bottom_link[key].text %></a>
+  <% } %>
+  <% }); %>
 </div>
