@@ -90,7 +90,7 @@
       background: #fafafa;
       display: block;
       &:after {
-        content: 'CODE';
+        content: attr(data-content-after);
         display: block;
         position: absolute;
         left: 8px;
@@ -127,4 +127,8 @@
     font-weight: bolder;
   }
 
+}
+
+pre[class*=language-] {
+  padding: 0;
 }

@@ -1,42 +1,38 @@
-<html lang="<%= config.language %>">
-  <head>
 
-    <meta charset="utf-8" >
+<meta charset="utf-8" >
 
-    <title><%= siteTitle %></title>
-    <meta name="description" content="<%= config.description %>">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="shortcut icon" href="<%= url_for('/favicon.ico') %>">
-    <link rel="stylesheet" href="./style/main.css">
+<title><%= siteTitle %></title>
+<meta name="description" content="<%= config.description %>">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="<%= url_for('/favicon.ico') %>">
+<link rel="stylesheet" href="<%= url_for('/style/main.css') %>">
 
-    <% if (theme.use_bootcdn) { %>
-    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css">
+<% if (theme.use_bootcdn) { %>
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/animate.css/4.1.1/animate.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css">
 
-    <% if (theme.gitalk.enable && page.published) { %>
-        <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/gitalk/1.7.2/gitalk.css"/>
-    <% } %>
+<% if (theme.gitalk.enable && page.published) { %>
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/gitalk/1.7.2/gitalk.css"/>
+<% } %>
 
-    <% } else { %>
-    <link rel="stylesheet" href="<%= url_for('/style/animate.min.css') %>">
-    <link rel="stylesheet" href="<%= url_for('/style/fontawesome.css') %>">
-    <link rel="stylesheet" href="<%= url_for('/style/katex.min.css') %>">
+<% } else { %>
+<link rel="stylesheet" href="<%= url_for('/style/animate.min.css') %>">
+<link rel="stylesheet" href="<%= url_for('/style/fontawesome.css') %>">
+<link rel="stylesheet" href="<%= url_for('/style/katex.min.css') %>">
 
-    <% if (theme.gitalk.enable && page.published) { %>
-        <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/gitalk/1.7.2/gitalk.css" />
-    <% } %>
-    <% } %>
+<% if (theme.gitalk.enable && page.published) { %>
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/gitalk/1.7.2/gitalk.css" />
+<% } %>
+<% } %>
 
-    <% if (theme.ga) { %>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=<%= theme.ga %>"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+<% if (theme.ga) { %>
+<script async src="https://www.googletagmanager.com/gtag/js?id=<%= theme.ga %>"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-      gtag('config', '<%= theme.ga %>');
-    </script>
-    <% } %>
-  </head>
-  <body>
+  gtag('config', '<%= theme.ga %>');
+</script>
+<% } %>

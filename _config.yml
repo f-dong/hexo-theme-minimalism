@@ -28,7 +28,7 @@ contact:
   zhihu:
   facebook:
 
-# 首页是否显示封面图片
+# 是否显示封面图片
 showFeatureImage: true
 
 # 首页头像图片

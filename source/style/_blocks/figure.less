@@ -1,0 +1,33 @@
+.highlight {
+  margin-bottom: 16px;
+  font-size: 0.87em;
+  font-family: 'Source Code Pro', Consolas, Menlo, Monaco, 'Courier New', monospace;
+  padding: 2em 1em 1em;
+  border-radius: 5px;
+  line-height: 1.375;
+  position: relative;
+  background: #fafafa;
+  color: #476582;
+  display: block;
+  table,th,tr,td,pre {
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
+  .gutter { // 才疏学浅 就不显示行号了
+    display: none;
+  }
+  .code {
+    display: flex;
+  }
+  &:after {
+    content: attr(data-content-after);
+    display: block;
+    position: absolute;
+    left: 8px;
+    top: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ccc;
+  }
+}

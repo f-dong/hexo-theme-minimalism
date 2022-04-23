@@ -1,6 +1,9 @@
+<html lang="<%= config.language %>">
+    <head>
+      <%- include('./includes/head', { siteTitle: config.title }) %>
+    </head>
 
-    <%- include('./includes/head', { siteTitle: config.title }) %>
-
+    <body>
     <div id="app" class="main">
       <%- include('./includes/header') %>
 
@@ -13,6 +16,6 @@
       <%- include('./includes/footer') %>
 
     </div>
-    <%- include('./includes/scripts') %>
-  </body>
+        <%- include('./includes/scripts') %>
+    </body>
 </html>
