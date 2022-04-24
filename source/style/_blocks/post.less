@@ -32,8 +32,13 @@
   }
 
   a {
+    color: #0e78db;
     font-weight: 600;
-    background: linear-gradient(180deg,transparent 70%,rgba(101,125,225,.4) 0);
+    transition: all 0.2s;
+  }
+  a:hover {
+    color: #0081f9;
+    font-size: 16.1px;
   }
   img {
     display: block;
@@ -49,12 +54,15 @@
     color: var(--c-base-blacklight);
 
     code {
+      color: #858080;
       padding: 0 3px;
       margin: 0 2px;
-      background: rgba(195,195,195,0.41);
+      background-color: #f9fafa;
+      border: 1px solid #e4e4e4;
       font-size: 0.9em;
-      border-radius: 2px;
       display: inline-block;
+      border-radius: 4px;
+      max-width: 740px;
     }
   }
 
