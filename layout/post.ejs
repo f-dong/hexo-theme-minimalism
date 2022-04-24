@@ -21,7 +21,7 @@
               <span>
                 <i class="icon-pricetags-outline"></i>
                 <% page.tags.forEach(function(tag, index) { %>
-                  <a href="<%= tag.link %>">
+                  <a href="<%= url_for(tag.path) %>">
                     <%= tag.name %>
                     <% if (index !== page.tags.length - 1) { %>
                       ，

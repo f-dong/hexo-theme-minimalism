@@ -9,7 +9,7 @@
         <div class="content-container">
 
           <div class="tags-container">
-            <% if (site.tags) { %>
+            <% if (site.tags.length <= 0) { %>
                 <a class="tag" href="">暂无标签</a>
             <% } %>
             <% site.tags.forEach((tag) => { %>
