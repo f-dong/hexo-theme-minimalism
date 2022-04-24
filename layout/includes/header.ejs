@@ -10,14 +10,14 @@
     </div>
     <div class="right">
       <transition name="fade">
-        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+        <i class="icon menu-switch icon-menu-outline" ></i>
       </transition>
     </div>
   </div>
 </div>
 
 <transition name="fade">
-  <div class="menu-container" style="display: none;" v-show="menuVisible">
+  <div class="menu-container">
     <div class="menu-list">
       <% Object.keys(theme.menu).forEach(function(key) { %>
         <% if (theme.menu[key].openType === 'External') { %>

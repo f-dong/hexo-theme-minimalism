@@ -1,20 +1,23 @@
 <% if (theme.use_bootcdn) { %>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 <% } else { %>
-    <script src="<%= url_for('/js/vue.min.js') %>"></script>
     <script src="<%= url_for('/js/jquery.min.js') %>"></script>
 <% } %>
 
-<script type="application/javascript">
-// hljs.highlightAll()
+<script>
+$(".menu-switch").click(function () {
+    if ($(this).hasClass('icon-menu-outline')) {
+        $(this).removeClass(' icon-menu-outline ').addClass('icon-close-outline');
+        $('.menu-container').css('opacity', '1').css('height', 'auto');
+    } else {
+        $(this).addClass(' icon-menu-outline ').removeClass('icon-close-outline');
+        $('.menu-container').css('opacity', '0');
 
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
+        var that = $(this);
+        setTimeout(function () {that.hasClass('icon-menu-outline') && $('.menu-container').css('height', '0')}, 600)
+    }
+
+});
 
 </script>
 
