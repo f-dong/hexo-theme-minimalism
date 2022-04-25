@@ -10,8 +10,8 @@
 
       <div class="content-container">
         <div class="post-detail">
-          <% if (theme.showFeatureImage && page.photos != '') { %>
-            <div class="feature-container" style="background-image: url('<%= page.photos %>')">
+          <% if (page.img != '') { %>
+            <div class="feature-container" style="background-image: url('<%= page.img %>')">
             </div>
           <% } %>
           <h2 class="post-title"><%= page.title %></h2>

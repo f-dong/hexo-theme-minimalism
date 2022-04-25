@@ -1,12 +1,16 @@
 <% page.posts.forEach(function(post) { %>
-<% if (post.hide != true)  { %> <!-- 隐藏某个文章 -->
+<% if (post.hide != true)  { %>
 <section class="post-item">
     <div class="content">
       <a href="<%- url_for(post.path) %>">
         <h2 class="post-title"><%= post.title %></h2>
       </a>
       <div class="post-abstract">
-        <%- post.excerpt %>
+        <% if (post.summary && post.summary.length > 0) { %>
+            <%- post.summary %>
+        <% } else if (post.excerpt && post.excerpt.length > 0) { %>
+            <%- strip_html(post.excerpt).substring(0, 120) %>
+        <% } %>
       </div>
       <div class="post-info">
         <span><i class="icon icon-calendar-outline"></i> <%= date(post.date, config.date_format) %></span>
@@ -25,14 +29,8 @@
         <% } %>
       </div>
     </div>
-    <% if (theme.showFeatureImage && post.photos) { %>
-      <a href="<%= post.link %>">
-        <div class="feature-container" style="background-image: url('<%= post.feature %>')">
-        </div>
-      </a>
-    <% } %>
   </section>
-<% } %>  <!-- 隐藏某个文章 -->
+<% } %>
 <% }); %>
 
 <% if (page.total > 1) { %>
