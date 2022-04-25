@@ -7,10 +7,10 @@ menu:
     url: /tags
     External: false
     name: 标签
-  Categories:
-    url: /categories
-    External: false
-    name: 分类
+#  Categories:
+#    url: /categories
+#    External: false
+#    name: 分类
   Archives:
     url: /archives
     External: false

@@ -19,7 +19,7 @@
 <link rel="stylesheet" href="<%= url_for('/style/fontawesome.css') %>">
 <link rel="stylesheet" href="<%= url_for('/style/katex.min.css') %>">
 
-<% if (theme.gitalk.enable && page.published) { %>
+<% if (theme.gitalk.enable && is_post()) { %>
     <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/gitalk/1.7.2/gitalk.css" />
 <% } %>
 <% } %>
