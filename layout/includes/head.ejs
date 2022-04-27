@@ -1,8 +1,39 @@
+<%
+    var title = page.title;
+    // tags, categories, about pages title
+    if (title == 'tags') {
+        title = '标签';
+    } else if (title == 'categories') {
+        title = '分类归档';
+    } else if (title == 'about') {
+        title = '关于';
+    }
+
+    // final page title.
+    var pageTitle = title ? title + ' | ' + config.title : config.title;
+    // keywords.
+    var keyWords = config.keywords ? config.keywords : config.title;
+    if (page.keywords) {
+        keyWords = page.keywords;
+    } else {
+    	keyWords = title ? title  + ', ' + keyWords : keyWords;
+    }
+    // description.
+    var description = config.description ? config.description : config.title;
+    if (page.summary) {
+        description = page.summary;
+    } else if (page.hasOwnProperty('__post') && page.__post) {
+        description = strip_html(page.content).substring(0, 120);
+    }
+%>
 
 <meta charset="utf-8" >
 
-<title><%= siteTitle %></title>
-<meta name="description" content="<%= config.description %>">
+<title><%= title %></title>
+<meta name="keywords" content="<%= keyWords %>">
+<meta name="description" content="<%- description %>">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <link rel="shortcut icon" href="<%= url_for('/favicon.ico') %>">
 <link rel="stylesheet" href="<%= url_for('/style/main.css') %>">
