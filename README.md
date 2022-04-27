@@ -10,21 +10,22 @@
 * [特性](#特性)
 * [下载](#下载)
 * [配置](#配置)
-    * [切换主题](#切换主题)
-        * [\_config\.yml 文件的其它修改建议:](#_configyml-文件的其它修改建议)
-    * [安装LESS 编译插件](#安装less-编译插件)
-    * [新建标签 tags 页](#新建标签-tags-页)
-    * [新建关于我 about 页](#新建关于我-about-页)
-    * [菜单导航配置](#菜单导航配置)
-        * [配置基本菜单导航的名称、路径url和图标icon\.](#配置基本菜单导航的名称路径url和图标icon)
-    * [代码高亮](#代码高亮)
-    * [中文链接转拼音（建议安装）](#中文链接转拼音建议安装)
-    * [添加emoji表情支持（可选的）](#添加emoji表情支持可选的)
-    * [添加 RSS 订阅支持（可选的）](#添加-rss-订阅支持可选的)
+  * [切换主题](#切换主题)
+    * [\_config\.yml 文件的其它修改建议:](#_configyml-文件的其它修改建议)
+  * [安装LESS 编译插件](#安装less-编译插件)
+  * [新建标签 tags 页](#新建标签-tags-页)
+  * [新建关于我 about 页](#新建关于我-about-页)
+  * [新建标签 categories 页(可选的)](#新建标签-categories-页可选的)
+  * [菜单导航配置](#菜单导航配置)
+    * [配置基本菜单导航的名称、路径url和图标icon\.](#配置基本菜单导航的名称路径url和图标icon)
+  * [代码高亮](#代码高亮)
+  * [中文链接转拼音（建议安装）](#中文链接转拼音建议安装)
+  * [添加emoji表情支持（可选的）](#添加emoji表情支持可选的)
+  * [添加 RSS 订阅支持（可选的）](#添加-rss-订阅支持可选的)
 * [文章 Front\-matter 介绍](#文章-front-matter-介绍)
-    * [Front\-matter 选项详解](#front-matter-选项详解)
-    * [最简示例](#最简示例)
-    * [最全示例](#最全示例)
+  * [Front\-matter 选项详解](#front-matter-选项详解)
+  * [最简示例](#最简示例)
+  * [最全示例](#最全示例)
 * [效果截图](#效果截图)
 * [License](#license)
 
@@ -75,7 +76,7 @@ npm i hexo-renderer-less --save
 
 ### 新建标签 tags 页
 
-本主题
+tags 页是用来展示所有标签的页面, 如果在你的博客 source 目录下还没有 tags/index.md 文件, 那么你就需要新建一个, 命令如下: 
 
 ```bash
 hexo new page "tags"
@@ -106,6 +107,26 @@ hexo new page "about"
 ---
 title: about
 date: 2022-04-26 22:59:30
+---
+```
+
+
+### 新建标签 categories 页(可选的)
+
+本主题内置了一个 `categories` 归档页, 用于显示分类下的所有文章, 如果在你的博客 `source` 目录下还没有 `tags/categories.md` 文件, 那么你就需要新建一个, 命令如下:
+
+```bash
+hexo new page "categories"
+```
+
+编辑你刚刚新建的页面文件 `/source/categories/index.md`, 至少需要以下内容: 
+
+```yaml
+---
+title: categories
+date: 2022-04-26 22:59:30
+type: "categories"
+layout: "categories"
 ---
 ```
 
