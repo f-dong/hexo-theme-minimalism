@@ -56,7 +56,7 @@
     code {
       color: #858080;
       padding: 0 3px;
-      margin: 0 2px;
+      margin: 2px 2px;
       background-color: #f9fafa;
       border: 1px solid #e4e4e4;
       font-size: 0.9em;
@@ -68,8 +68,8 @@
 
   code {
     color: #476582;
-    padding: .25rem .5rem;
-    margin: 0;
+    padding: .16rem .5rem;
+    margin: 0.25rem 0;
     font-size: .85em;
     background-color: rgba(27,31,35,.05);
     border-radius: 3px;
@@ -118,10 +118,15 @@
   }
   tr {
     border-top: 1px solid #dfe2e5;
+    transition: 500ms;
   }
   td, th {
     border: 1px solid #dfe2e5;
-    padding: .6em 1em;
+    padding: .4em;
+    line-height: 1.2em;
+  }
+  tr:hover {
+    background-color: #f8f8f8;
   }
 
   ul, ol {
