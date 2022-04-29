@@ -38,7 +38,7 @@
 
         <% if (page.next) { %>
           <div class="next-post">
-            <a class="purple-link" href="<%- url_for(page.next_link) %>">
+            <a class="purple-link" href="<%- url_for(page.next.path) %>">
               <h3 class="post-title">
                 下一篇：<%= page.next.title %>
               </h3>
