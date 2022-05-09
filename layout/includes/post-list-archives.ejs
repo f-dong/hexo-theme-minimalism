@@ -4,7 +4,7 @@
   <% years.forEach(function(year) { %>
     <h2 class="year"><%= year %></h2>
     <% page.posts.forEach(function(post) { %>
-      <%if (date(post.date, 'YYYY') !== year) { %>
+      <%if (date(post.date, 'YYYY') === year) { %>
         <article class="post">
           <a href="<%= url_for(post.path) %>">
             <h2 class="post-title">
