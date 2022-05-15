@@ -15,19 +15,17 @@
 </div>
 
 <div class="menu-container" style="height: 0;opacity: 0;">
-<nav>
-    <div class="menu-list">
-      <% Object.keys(theme.menu).forEach(function(key) { %>
-        <% if (theme.menu[key].openType === 'External') { %>
-          <a class="menu purple-link" href="<%= url_for(theme.menu[key].url) %>" class="menu" target="_blank">
-            <%= theme.menu[key].name %>
-          </a>
-        <% } else { %>
-          <a href="<%= url_for(theme.menu[key].url) %>" class="menu purple-link">
-            <%= theme.menu[key].name %>
-          </a>
-        <% } %>
-      <% }); %>
-    </div>
+<nav class="menu-list">
+  <% Object.keys(theme.menu).forEach(function(key) { %>
+    <% if (theme.menu[key].openType === 'External') { %>
+      <a class="menu purple-link" href="<%= url_for(theme.menu[key].url) %>" class="menu" target="_blank">
+        <%= theme.menu[key].name %>
+      </a>
+    <% } else { %>
+      <a href="<%= url_for(theme.menu[key].url) %>" class="menu purple-link">
+        <%= theme.menu[key].name %>
+      </a>
+    <% } %>
+  <% }); %>
 </nav>
 </div>
