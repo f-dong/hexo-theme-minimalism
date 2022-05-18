@@ -2,11 +2,11 @@
     var title = page.title;
     // tags, categories, about pages title
     if (title == 'tags') {
-        title = '标签';
+        title = '标签 | '+ config.title;
     } else if (title == 'categories') {
-        title = '分类归档';
+        title = '分类归档 | '+ config.title;
     } else if (title == 'about') {
-        title = '关于';
+        title = '关于 | '+ config.title;
     } else if (!title) {
         title = config.title;
     }
