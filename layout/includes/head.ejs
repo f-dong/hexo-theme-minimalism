@@ -7,6 +7,8 @@
         title = '分类归档';
     } else if (title == 'about') {
         title = '关于';
+    } else if (!title) {
+        title = config.title;
     }
 
     // final page title.
