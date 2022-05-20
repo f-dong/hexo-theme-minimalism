@@ -7,6 +7,7 @@
 <a title="license"><img src="https://img.shields.io/badge/license-MIT-green"></a>
 </p>
 
+* [预览](#预览)
 * [特性](#特性)
 * [下载](#下载)
 * [配置](#配置)
@@ -30,6 +31,10 @@
 * [License](#license)
 
 Table of contents generated with [gh-md-toc](https://github.com/ekalinin/github-markdown-toc.go)
+
+## 预览
+
+- [codeover.cn](https://www.codeover.cn)
 
 ## 特性
 
@@ -269,6 +274,7 @@ feed:
 | cover      | `false`                    | `v1.0.2`版本新增，表示该文章是否需要加入到首页轮播封面中     |
 | toc        | `true`                     | 是否开启 TOC，可以针对某篇文章单独关闭 TOC 的功能。前提是在主题的 `config.yml` 中激活了 `toc` 选项 |
 | summary    | 无                         | 文章摘要，自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字 |
+| description    | 无                         | 用于搜索引擎的 description，如果没值则取 summary 或 截取文章内容 |
 | categories | 无                         | 文章分类，本主题的分类表示宏观上大的分类，只建议一篇文章一个分类 |
 | tags       | 无                         | 文章标签，一篇文章可以多个标签                               |
 | keywords   | 文章标题                   | 文章关键字，SEO 时需要                                       |
@@ -299,6 +305,7 @@ hide: false
 cover: true
 toc: false
 summary: 这是你自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要
+description: 该值主要用于 seo 优化，设置后页面 description 将显示该值，未设置则取 summary 或截取部分文章内容
 categories: Markdown
 tags:
   - Typora

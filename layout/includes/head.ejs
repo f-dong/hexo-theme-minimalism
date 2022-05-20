@@ -22,7 +22,9 @@
     }
     // description.
     var description = config.description ? config.description : config.title;
-    if (page.summary) {
+    if (page.description) {
+        description = page.description;
+    } else if (page.summary) {
         description = page.summary;
     } else if (page.hasOwnProperty('__post') && page.__post) {
         description = strip_html(page.content).substring(0, 120);
