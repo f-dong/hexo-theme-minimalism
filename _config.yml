@@ -40,14 +40,14 @@ ga:
 # Gittalk 评论组件
 # See: https://github.com/gitalk/gitalk/
 gitalk:
-  enable: false
+  enable: true
   clientId:
   clientSecret:
   repository:
   owner:
 
 # 是否使用 bootcdn
-use_bootcdn: true
+use_bootcdn: false
 
 # 底部链接
 bottom_link:
