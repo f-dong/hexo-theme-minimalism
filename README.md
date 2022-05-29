@@ -13,7 +13,6 @@
 * [配置](#配置)
   * [切换主题](#切换主题)
     * [\_config\.yml 文件的其它修改建议:](#_configyml-文件的其它修改建议)
-  * [安装LESS 编译插件](#安装less-编译插件)
   * [新建标签 tags 页](#新建标签-tags-页)
   * [新建关于我 about 页](#新建关于我-about-页)
   * [新建标签 categories 页(可选的)](#新建标签-categories-页可选的)
@@ -70,14 +69,6 @@ git clone https://github.com/f-dong/hexo-theme-minimalism.git
 - 请修改 `_config.yml` 的 `url` 的值为你的网站主 `URL`（如：`http://xxx.github.io`）。
 - 建议修改两个 `per_page` 的分页条数值为 `6` 的倍数，如：`12`、`18` 等，这样文章列表在各个屏幕下都能较好的显示。
 - 建议修改 `language` 的值为 `zh-CN`, 否则部分浏览器将弹出翻译窗口
-
-### 安装LESS 编译插件
-
-本主题使用了 `less` 作为 `css` 编译引擎, 如果你的博客之前没有安装过 `hexo-renderer-less` 则你需要运行如下命令安装
-
-```bash
-npm i hexo-renderer-less --save
-```
 
 ### 新建标签 tags 页
 
@@ -192,7 +183,7 @@ prismjs:
   tab_replace: ''
 ```
 
-主题中默认的 `prismjs` 主题是 `Tomorrow Night`，如果你想定制自己的主题，可以前往 [prismjs 下载页面](https://prismjs.com/download.html) 定制下载自己喜欢的主题 `css` 文件，然后将此 css 主题文件取名为 `prism.css`，替换掉 `hexo-theme-minimalism` 主题文件夹中的 `source/style/_blocks/prism.less` 文件即可。
+主题中默认的 `prismjs` 主题是 `Tomorrow Night`，如果你想定制自己的主题，可以前往 [prismjs 下载页面](https://prismjs.com/download.html) 定制下载自己喜欢的主题 `css` 文件，然后将此 css 主题文件取名为 `prism.css`，替换掉 `hexo-theme-minimalism` 主题文件夹中的 `source/style/_core/prism.css` 文件即可。
 
 ### 中文链接转拼音（建议安装）
 
