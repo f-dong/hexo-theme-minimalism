@@ -44,7 +44,6 @@
 
 <% if (theme.use_bootcdn) { %>
 <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/KaTeX/0.15.3/katex.min.css">
 
 <% if (theme.gitalk.enable) { %>
     <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/gitalk/1.7.2/gitalk.css"/>
@@ -52,7 +51,6 @@
 
 <% } else { %>
 <link rel="stylesheet" href="<%= url_for('/style/fontawesome.css') %>">
-<link rel="stylesheet" href="<%= url_for('/style/katex.min.css') %>">
 
 <% if (theme.gitalk.enable) { %>
     <link rel="stylesheet" href="<%= url_for('/style/gitalk.css') %>" />
