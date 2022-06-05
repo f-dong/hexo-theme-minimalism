@@ -1,7 +1,9 @@
 <% if (theme.use_bootcdn) { %>
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" async></script>
 <% } else { %>
     <script src="<%= url_for('/js/jquery.min.js') %>"></script>
+    <script src="<%= url_for('/js/jquery.fancybox.min.js') %>"></script>
 <% } %>
 
 <script>
@@ -17,18 +19,17 @@ $(".menu-switch").click(function () {
         setTimeout(function () {that.hasClass('icon-menu-outline') && $('.menu-container').css('height', '0')}, 600)
     }
 });
-
+$(".post-detail img").each(function() {
+    var currentImage = $(this);
+    currentImage.wrap("<a href='" + currentImage.attr("src") + "' data-fancybox='lightbox' data-caption='" + currentImage.attr("alt") + "'></a>");
+});
 </script>
-
-
 <% if (theme.gitalk.enable && is_post()) { %>
-
 <% if (theme.use_bootcdn) { %>
     <script src="https://cdn.bootcdn.net/ajax/libs/gitalk/1.7.2/gitalk.min.js"></script>
 <% } else { %>
     <script src="<%= url_for('/js/gitalk.min.js') %>"></script>
 <% } %>
-
 <script>
 
   var gitalk = new Gitalk({
