@@ -45,7 +45,6 @@ gitalk:
   clientSecret:
   repository: # 仓库名
   owner: # 仓库所有者
-  createIssueManually: true # 是否自动创建 issue，false 为自动创建，反之需要手动创建
 
 # 是否使用 bootcdn
 use_bootcdn: false

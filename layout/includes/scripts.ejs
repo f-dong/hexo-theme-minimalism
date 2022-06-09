@@ -6,24 +6,8 @@
     <script src="<%= url_for('/js/jquery.fancybox.min.js') %>"></script>
 <% } %>
 
-<script>
-$(".menu-switch").click(function () {
-    if ($(this).hasClass('icon-menu-outline')) {
-        $(this).removeClass(' icon-menu-outline ').addClass('icon-close-outline');
-        $('.menu-container').css('opacity', '1').css('height', 'auto');
-    } else {
-        $(this).addClass(' icon-menu-outline ').removeClass('icon-close-outline');
-        $('.menu-container').css('opacity', '0');
+<script src="<%= url_for('/js/main.js') %>"></script>
 
-        var that = $(this);
-        setTimeout(function () {that.hasClass('icon-menu-outline') && $('.menu-container').css('height', '0')}, 600)
-    }
-});
-$(".post-detail img").each(function() {
-    var currentImage = $(this);
-    currentImage.wrap("<a href='" + currentImage.attr("src") + "' data-fancybox='lightbox' data-caption='" + currentImage.attr("alt") + "'></a>");
-});
-</script>
 <% if (theme.gitalk.enable && is_post()) { %>
 <% if (theme.use_bootcdn) { %>
     <script src="https://cdn.bootcdn.net/ajax/libs/gitalk/1.7.2/gitalk.min.js"></script>
@@ -41,7 +25,7 @@ $(".post-detail img").each(function() {
     id: location.pathname.slice(1, location.pathname.lastIndexOf('/')).substring(0, 49),       // Ensure uniqueness and length less than 50
     distractionFreeMode: false,  // Facebook-like distraction free mode
     createIssueManually: <%= theme.gitalk.createIssueManually %>,
-  })
+  });
 
   gitalk.render('gitalk-container')
 
