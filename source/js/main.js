@@ -44,3 +44,54 @@ $('.post-detail .copy-code').on('click', function () {
         $(this).html('');
     }, 2500)
 });
+
+// 代码语言
+$(function () {
+    $('code').each(function () {
+        var code_language = $(this).attr('class');
+
+        if (!code_language) {
+            return true;
+        }
+        var lang_name = code_language.replace("line-numbers", "").trim().replace("highlight", "").trim().replace("language-", "").trim();
+
+        $(this).attr('data-content-after', lang_name || 'CODE');
+    });
+    $('.highlight').each(function () {
+        var code_language = $(this).attr('class');
+
+        if (!code_language) {
+            return true;
+        }
+        var lang_name = code_language.replace("highlight", "").trim();
+
+        $(this).attr('data-content-after', lang_name || 'CODE');
+    });
+});
+
+// 文章详情侧边目录
+let mainNavLinks = document.querySelectorAll(".top-box a");
+window.addEventListener("scroll", event => {
+    let fromTop = window.scrollY + 100;
+
+    mainNavLinks.forEach((link, index) => {
+        let section = document.getElementById(decodeURI(link.hash).substring(1));
+        let nextSection = null
+        if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+        }
+        if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+                if (nextSection.offsetTop > fromTop) {
+                    link.classList.add("current");
+                } else {
+                    link.classList.remove("current");
+                }
+            } else {
+                link.classList.add("current");
+            }
+        } else {
+            link.classList.remove("current");
+        }
+    });
+});
