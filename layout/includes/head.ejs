@@ -46,7 +46,7 @@
 <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
 
-<% if (theme.gitalk.enable) { %>
+<% if (theme.gitalk.enable && is_post()) { %>
     <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/gitalk/1.7.2/gitalk.css"/>
 <% } %>
 
@@ -54,7 +54,7 @@
 <link rel="stylesheet" href="<%= url_for('/style/fontawesome.css') %>">
 <link rel="stylesheet" href="<%= url_for('/style/jquery.fancybox.min.css') %>">
 
-<% if (theme.gitalk.enable) { %>
+<% if (theme.gitalk.enable && is_post()) { %>
     <link rel="stylesheet" href="<%= url_for('/style/gitalk.css') %>" />
 <% } %>
 <% } %>
