@@ -221,7 +221,7 @@ npm install hexo-filter-github-emojis --save
 githubEmojis:
   enable: true
   className: github-emoji
-  inject: true
+  inject: false
   styles:
   customEmojis:
 ```
