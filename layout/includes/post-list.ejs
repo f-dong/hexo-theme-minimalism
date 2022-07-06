@@ -5,13 +5,15 @@
       <a href="<%- url_for(post.path) %>">
         <h2 class="post-title"><%= post.title %></h2>
       </a>
-      <div class="post-abstract">
-        <% if (post.summary && post.summary.length > 0) { %>
-            <%- post.summary %>
-        <% } else if (post.excerpt && post.excerpt.length > 0) { %>
-            <%- strip_html(post.excerpt).substring(0, 120) %>
-        <% } %>
-      </div>
+      <a href="<%- url_for(post.path) %>">
+          <div class="post-abstract">
+            <% if (post.summary && post.summary.length > 0) { %>
+                <%- post.summary %>
+            <% } else if (post.excerpt && post.excerpt.length > 0) { %>
+                <%- strip_html(post.excerpt).substring(0, 120) %>
+            <% } %>
+          </div>
+      </a>
       <div class="post-info">
         <span><i class="icon icon-calendar-outline"></i> <%= date(post.date, config.date_format) %></span>
         <% if (post.tags && post.tags.length > 0) { %>
