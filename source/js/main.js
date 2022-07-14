@@ -19,7 +19,7 @@ $(".post-detail img").each(function() {
 });
 
 // 代码复制
-var $copyIcon = $('<i class="fa-solid fa-copy copy-code" title="复制代码"></i>');
+var $copyIcon = $('<i class="fa-solid icon icon-copy copy-code" title="复制代码"></i>');
 $(".post-detail figure").append($copyIcon);
 $(".post-detail pre[class*=language-] code").append($copyIcon);
 $('.post-detail .copy-code').on('click', function () {

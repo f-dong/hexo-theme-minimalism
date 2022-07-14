@@ -43,7 +43,6 @@
 <link rel="stylesheet" href="<%= url_for('/style/main.css') %>">
 
 <% if (theme.use_bootcdn) { %>
-<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
 
 <% if (theme.gitalk.enable && is_post()) { %>
@@ -51,7 +50,6 @@
 <% } %>
 
 <% } else { %>
-<link rel="stylesheet" href="<%= url_for('/style/fontawesome.css') %>">
 <link rel="stylesheet" href="<%= url_for('/style/jquery.fancybox.min.css') %>">
 
 <% if (theme.gitalk.enable && is_post()) { %>

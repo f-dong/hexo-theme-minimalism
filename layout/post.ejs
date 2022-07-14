@@ -16,10 +16,10 @@
           <% } %>
           <h2 class="post-title"><%= page.title %></h2>
           <div class="post-info post-detail-info">
-            <span><i class="icon-calendar-outline"></i> <%= date(page.date, config.date_format) %></span>
+            <span><i class="icon icon-calendar-outline"></i> <%= date(page.date, config.date_format) %></span>
             <% if (page.tags && page.tags.length > 0) { %>
               <span>
-              <i class="icon-pricetags-outline"></i>
+              <i class="icon icon-pricetags-outline"></i>
                 <% page.tags.forEach(function(tag, index) { %>
                   <a href="<%= url_for(tag.path) %>">
                   <%= tag.name %>

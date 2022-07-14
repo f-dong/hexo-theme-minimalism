@@ -4,7 +4,7 @@
     <% ['github', 'twitter', 'weibo', 'zhihu', 'facebook'].forEach((item) => { %>
       <% if (theme.contact[item]) { %>
         <a href="<%= theme.contact[item] %>" target="_blank">
-          <i class="fab fa-<%= item %>"></i>
+          <i class="icon icon-<%= item %>"></i>
         </a>
       <% } %>
     <% }) %>
