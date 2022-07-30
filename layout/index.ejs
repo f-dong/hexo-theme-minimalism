@@ -1,22 +1,10 @@
-<!DOCTYPE html>
-<html lang="<%= config.language %>">
-    <head>
-      <%- include('./includes/head', { siteTitle: config.title }) %>
-    </head>
+<%- include('./includes/header') %>
 
-    <body>
-    <div id="app" class="main">
-      <%- include('./includes/header') %>
+  <div class="content-container">
 
-      <div class="content-container">
+    <%- include('./includes/post-list') %>
 
-        <%- include('./includes/post-list') %>
+  </div>
 
-      </div>
+<%- include('./includes/footer') %>
 
-      <%- include('./includes/footer') %>
-
-    </div>
-        <%- include('./includes/scripts') %>
-    </body>
-</html>

@@ -1,29 +1,16 @@
-<!DOCTYPE html>
-<html lang="<%= config.language %>">
-  <head>
-    <%- include('./includes/head', { siteTitle: config.title }) %>
-  </head>
-  <body>
-    <div id="app" class="main">
-      <%- include('./includes/header') %>
+<%- include('./includes/header') %>
 
-        <div class="content-container">
+<div class="content-container">
 
-          <div class="tags-container">
-            <% if (site.tags.length <= 0) { %>
-                <a class="tag" href="">暂无标签</a>
-            <% } %>
-            <% site.tags.forEach((tag) => { %>
-              <a class="tag" href="<%= url_for(tag.path) %>"><%= tag.name %></a>
-            <% }); %>
-          </div>
+  <div class="tags-container">
+    <% if (site.tags.length <= 0) { %>
+        <a class="tag" href="">暂无标签</a>
+    <% } %>
+    <% site.tags.forEach((tag) => { %>
+      <a class="tag" href="<%= url_for(tag.path) %>"><%= tag.name %></a>
+    <% }); %>
+  </div>
 
-        </div>
+</div>
 
-        <%- include('./includes/footer') %>
-
-      </div>
-      <%- include('./includes/scripts') %>
-    </div>
-  </body>
-</html>
+<%- include('./includes/footer') %>
