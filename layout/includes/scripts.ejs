@@ -7,6 +7,11 @@
 <% } %>
 
 <script src="<%= url_for('/js/main.js') %>"></script>
+<script>
+  if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    $("body").addClass("night-node");
+  }
+</script>
 
 <% if (theme.gitalk.enable && is_post()) { %>
 <% if (theme.use_bootcdn) { %>
