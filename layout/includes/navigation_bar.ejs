@@ -1,0 +1,31 @@
+<div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="<%= url_for(config.url) %>">
+        <img class="avatar" src="<%= url_for(theme.avatar) %>" alt="" width="32px" height="32px">
+      </a>
+      <a href="<%= url_for(config.url) %>">
+        <h1 class="site-title"><%= config.title %></h1>
+      </a>
+    </div>
+    <div class="right">
+        <i class="icon menu-switch icon-menu-outline" ></i>
+    </div>
+  </div>
+</div>
+
+<div class="menu-container" style="height: 0;opacity: 0;">
+<nav class="menu-list">
+  <% Object.keys(theme.menu).forEach(function(key) { %>
+    <% if (theme.menu[key].openType === 'External') { %>
+      <a class="menu purple-link" href="<%= url_for(theme.menu[key].url) %>" class="menu" target="_blank">
+        <%= theme.menu[key].name %>
+      </a>
+    <% } else { %>
+      <a href="<%= url_for(theme.menu[key].url) %>" class="menu purple-link">
+        <%= theme.menu[key].name %>
+      </a>
+    <% } %>
+  <% }); %>
+</nav>
+</div>

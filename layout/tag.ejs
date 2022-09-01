@@ -1,28 +1,16 @@
+<%- include('./includes/header') %>
 
-<!DOCTYPE html>
-<html lang="<%= config.language %>">
-  <head>
-    <%- include('./includes/head', { siteTitle: `${page.tag} | ${config.title}` }) %>
-  </head>
-  <body>
-    <div id="app" class="main">
-      <%- include('./includes/header') %>
+<div class="content-container">
 
-      <div class="content-container">
+  <div class="current-tag-container">
+    <h2 class="title">
+      <i class="icon icon-pricetags-outline"></i> <%= page.tag %>
+    </h2>
+  </div>
 
-        <div class="current-tag-container">
-          <h2 class="title">
-            <i class="icon icon-pricetags-outline"></i> <%= page.tag %>
-          </h2> 
-        </div>
+  <%- include('./includes/post-list') %>
 
-        <%- include('./includes/post-list') %>
+</div>
 
-      </div>
+<%- include('./includes/footer') %>
 
-      <%- include('./includes/footer') %>
-
-    </div>
-    <%- include('./includes/scripts') %>
-  </body>
-</html>

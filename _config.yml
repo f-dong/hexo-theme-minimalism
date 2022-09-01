@@ -20,6 +20,10 @@ menu:
     External: false
     name: 关于
 
+# 深色主题
+dark_theme:
+  enable: true
+
 # 联系方式
 contact:
   github: "https://github.com/f-dong"

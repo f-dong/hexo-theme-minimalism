@@ -30,7 +30,9 @@
         description = strip_html(page.content).substring(0, 120);
     }
 %>
-
+<% if (theme.dark_theme && theme.dark_theme.enable) { %>
+<script>!function(){var e=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,t=localStorage.getItem("use-color-scheme")||"auto";("dark"===t||e&&"light"!==t)&&document.documentElement.classList.toggle("dark",!0)}()</script>
+<% } %>
 <meta charset="utf-8" >
 
 <title><%= title %></title>

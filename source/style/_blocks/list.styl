@@ -9,7 +9,7 @@
 .content-container {
   width: 100%;
   flex: 1;
-  padding: 48px 16px 32px;
+  padding: 0 16px 32px;
 }
 
 .post-item {
@@ -35,7 +35,6 @@
       line-height: 24px;
       position: relative;
       display: -webkit-box;
-      overflow: hidden;
       -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
 
@@ -136,4 +135,13 @@
 
 nav {
   overflow: hidden;
+}
+
+@media (min-width: 1200px) {
+  .main {
+    max-width: 1000px;
+  }
+  .site-header {
+    max-width: 1000px;
+  }
 }
