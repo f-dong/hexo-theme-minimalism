@@ -109,23 +109,29 @@
         font-weight: bold;
         color: #ccc;
       }
-      &:hover .copy-code {
-        display: block;
-      }
-      .copy-code {
-        cursor: pointer;
-        display: none;
-        position: absolute;
-        right: 8px;
-        top: 4px;
-        font-size: 22px;
-        color: #9a9a9a;
-        .copy-success {
-          font-size: 16px;
-        }
+
+    }
+
+    &:hover .copy-code {
+      display: block;
+    }
+    .copy-code {
+      cursor: pointer;
+      display: none;
+      position: absolute;
+      right: 8px;
+      top: 4px;
+      font-size: 22px;
+      color: #9a9a9a;
+      .copy-success {
+        font-size: 16px;
       }
     }
 
+  }
+
+  pre[class*=language-].line-numbers {
+    position: relative;
   }
 
   table {

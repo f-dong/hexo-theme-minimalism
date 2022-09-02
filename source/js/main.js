@@ -21,7 +21,7 @@ $(".post-detail img").each(function() {
 // 代码复制
 var $copyIcon = $('<i class="fa-solid icon icon-copy copy-code" title="复制代码"></i>');
 $(".post-detail figure").append($copyIcon);
-$(".post-detail pre[class*=language-] code").append($copyIcon);
+$(".post-detail pre[class*=language-].line-numbers").append($copyIcon);
 $('.post-detail .copy-code').on('click', function () {
     var selection = window.getSelection();
     var range = document.createRange();
@@ -29,8 +29,8 @@ $('.post-detail .copy-code').on('click', function () {
     if (table.length) {
         range.selectNodeContents($(this).prev('table').find('.code').find('pre')[0]);
     } else {
-        console.log($(this).prev('code'));
-        range.selectNodeContents($(this).parent('code')[0]);
+        console.log($(this).prev('code')[0]);
+        range.selectNodeContents($(this).prev('code')[0]);
     }
 
     selection.removeAllRanges();

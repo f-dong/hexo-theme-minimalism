@@ -21,13 +21,12 @@ html.dark {
         p {
             color: #c0c0c0;
         }
-        code {
+        code:not([class*=language-]) {
             color: #e3e3e3;
             background-color: rgba(110,118,129,0.4);
             border: none;
             border-radius: 6px;
-
-         }
+        }
         h1, h2, h3, h4, h5, h6 {
             color: #ddd;
         }
@@ -44,6 +43,20 @@ html.dark {
             color: #c0c0c0;
         }
         blockquote {
+            background: black;
+        }
+    }
+
+    .highlight,pre[class*=language-].line-numbers {
+        background-color: black;
+        .copy-code {
+            color: #7e7e7e;
+        }
+        table tr:hover {
+            background-color: black;
+        }
+        code[class*=language-] {
+            overflow-x: auto;
             background: black;
         }
     }
@@ -121,16 +134,6 @@ html.dark {
     .highlight {
         .tag, .name, .attribute {
             color: #2d22dd;
-        }
-    }
-
-    .highlight,pre[class*=language-].line-numbers {
-        background-color: black;
-        .copy-code {
-            color: #7e7e7e;
-        }
-        table tr:hover {
-            background-color: black;
         }
     }
 
