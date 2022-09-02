@@ -95,3 +95,11 @@ window.addEventListener("scroll", event => {
         }
     });
 });
+
+// 点击锚点滚动条偏移
+$(".top-box-link").click(function(){
+    setTimeout(function () {
+        $(window).scrollTop($(window).scrollTop() - 54);
+        console.log($(window).scrollTop() - 54, '滚动条位置');
+    }, 0);
+});
