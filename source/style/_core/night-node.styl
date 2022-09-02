@@ -48,21 +48,6 @@ html.dark {
         }
     }
 
-
-    .highlight,pre[class*=language-].line-numbers {
-        background-color: black;
-        .copy-code {
-            color: #7e7e7e;
-        }
-        table tr:hover {
-            background-color: black;
-        }
-    }
-
-    .keyword, .selector-tag, .subst {
-        color: #e3e3e3;
-    }
-
     .site-header-container {
         background-color: #121212;
     }
@@ -133,8 +118,23 @@ html.dark {
     }
 
     // 代码块
-    .tag, .name, .attribute {
-        color: #2d22dd;
+    .highlight {
+        .tag, .name, .attribute {
+            color: #2d22dd;
+        }
     }
 
+    .highlight,pre[class*=language-].line-numbers {
+        background-color: black;
+        .copy-code {
+            color: #7e7e7e;
+        }
+        table tr:hover {
+            background-color: black;
+        }
+    }
+
+    .keyword, .selector-tag, .subst {
+        color: #e3e3e3;
+    }
 }
