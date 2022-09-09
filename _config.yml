@@ -41,6 +41,9 @@ avatar: /images/avatar.png
 # 谷歌统计 跟踪 ID
 ga:
 
+# 百度统计 The baidu web analytics
+baidu_tongji:
+
 # Gittalk 评论组件
 # See: https://github.com/gitalk/gitalk/
 gitalk:
