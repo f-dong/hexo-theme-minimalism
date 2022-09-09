@@ -6,6 +6,10 @@
     <script src="<%= url_for('/js/jquery.fancybox.min.js') %>"></script>
 <% } %>
 
+<% if (is_post()) { %>
+    <script>window.is_post = true;</script>
+<% } %>
+
 <script src="<%= url_for('/js/main.js') %>"></script>
 
 <% if (theme.gitalk.enable && is_post()) { %>
