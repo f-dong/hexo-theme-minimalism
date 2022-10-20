@@ -7,6 +7,8 @@
 <a title="license"><img src="https://img.shields.io/badge/license-MIT-green"></a>
 </p>
 
+![预览图片](https://user-images.githubusercontent.com/40230452/189160566-c4f4070a-a64e-4843-81eb-7885c45f71c3.png)
+
 * [预览](#预览)
 * [特性](#特性)
 * [下载](#下载)
@@ -36,6 +38,7 @@ Table of contents generated with [gh-md-toc](https://github.com/ekalinin/github-
 ## 预览
 
 - [codeover.cn](https://www.codeover.cn)
+
 
 ## 特性
 
@@ -305,16 +308,6 @@ tags:
   - Markdown
 ---
 ```
-
-## 效果截图
-
-![首页](https://user-images.githubusercontent.com/40230452/165338588-6d8e25b3-87b0-4d40-af19-e79810b6c49f.png)
-
-![文章详情](https://user-images.githubusercontent.com/40230452/165338898-37789971-3ee7-4cbb-bfc7-384170f9a531.png)
-
-![文章详情带图](https://user-images.githubusercontent.com/40230452/165339055-1fe5d6d1-3638-4868-9e16-4cae2bb6e4e3.png)
-
-![归档页](https://user-images.githubusercontent.com/40230452/165339257-42af402d-ac23-4d91-8d4b-11ab061459dc.png)
 
 ## License
 MIT

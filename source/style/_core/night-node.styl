@@ -4,30 +4,29 @@ html.dark {
     background-color: #121212;
     color: #fff;
     .post-title {
-        color: #e3e3e3;
+        color: #c9d1d9;
     }
     .post-item .content {
         .post-title {
-            color: #e3e3e3;
+            color: #c9d1d9;
         }
         .post-abstract {
             color: #afafaf;
         }
     }
     .post-detail .post-title {
-        color: #d3d3d3;
+        color: #c9d1d9;
     }
     .post-content {
         p {
-            color: #c0c0c0;
+            color: #c9d1d9;
         }
-        code {
-            color: #e3e3e3;
+        code:not([class*=language-]) {
+            color: #c9d1d9;
             background-color: rgba(110,118,129,0.4);
             border: none;
             border-radius: 6px;
-
-         }
+        }
         h1, h2, h3, h4, h5, h6 {
             color: #ddd;
         }
@@ -48,7 +47,6 @@ html.dark {
         }
     }
 
-
     .highlight,pre[class*=language-].line-numbers {
         background-color: black;
         .copy-code {
@@ -57,10 +55,10 @@ html.dark {
         table tr:hover {
             background-color: black;
         }
-    }
-
-    .keyword, .selector-tag, .subst {
-        color: #e3e3e3;
+        code[class*=language-] {
+            overflow-x: auto;
+            background: black;
+        }
     }
 
     .site-header-container {
@@ -75,7 +73,7 @@ html.dark {
 
     .top-box li {
         a {
-            color: #e3e3e3;
+            color: #c9d1d9;
         }
         a:hover, a.current {
             color: #006cff !important;
@@ -85,7 +83,7 @@ html.dark {
 
     .next-post {
         .post-title {
-            color: #e3e3e3;
+            color: #c9d1d9;
         }
         .purple-link {
             background: linear-gradient(180deg, transparent 70%, rgb(101,125,225) 0);
@@ -133,8 +131,18 @@ html.dark {
     }
 
     // 代码块
-    .tag, .name, .attribute {
-        color: #2d22dd;
+    .highlight {
+        .tag, .name, .attribute {
+            color: #2d22dd;
+        }
+        .deletion {
+            color: #ffdcd7;
+            background: #67060c;
+        }
+        .addition {
+            color: #aff5b4;
+            background-color: #033a16;
+        }
     }
     .deletion {
         color: #ffdcd7;
@@ -145,4 +153,8 @@ html.dark {
         background: #033a16;
     }
 
+
+    .keyword, .selector-tag, .subst {
+        color: #c9d1d9;
+    }
 }
