@@ -47,7 +47,7 @@ baidu_tongji:
 # Gittalk 评论组件
 # See: https://github.com/gitalk/gitalk/
 gitalk:
-  enable: true
+  enable: false
   clientId:
   clientSecret:
   repository: # 仓库名
