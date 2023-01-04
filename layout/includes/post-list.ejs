@@ -1,5 +1,5 @@
 <% page.posts.forEach(function(post) { %>
-<% if (post.hide != true)  { %>
+<% if (post.hide != true || is_tag())  { %>
 <section class="post-item">
     <div class="content">
       <a href="<%- url_for(post.path) %>">
