@@ -1,7 +1,4 @@
-// var md = require('marked')({
-//     // allow HTML tags
-//     html: true
-// });
+import marked from "hexo/lib/models/types/moment";
 
 /**
  * Render markdown footnotes
@@ -9,11 +6,17 @@
  * @returns {String} text
  */
 function renderFootnotes(text) {
-    var footnotes = [];
-    var reFootnoteContent = /\[\^(\d+)\]: ?([\S\s]+?)(?=\[\^(?:\d+)\]|\n\n|$)/g;
-    var reInlineFootnote = /\[\^(\d+)\]\((.+?)\)/g;
-    var reFootnoteIndex = /\[\^(\d+)\]/g;
-    var html = '';
+    try { // 防止 hexo 版本过低导致报错
+        var marked = require('marked');
+    } catch (e) {
+        return text;
+    }
+
+    let footnotes = [];
+    let reFootnoteContent = /\[\^(\d+)\]: ?([\S\s]+?)(?=\[\^(?:\d+)\]|\n\n|$)/g;
+    let reInlineFootnote = /\[\^(\d+)\]\((.+?)\)/g;
+    let reFootnoteIndex = /\[\^(\d+)\]/g;
+    let html = '';
 
     // threat all inline footnotes
     text = text.replace(reInlineFootnote, function (match, index, content) {
@@ -45,17 +48,21 @@ function renderFootnotes(text) {
         }
         return map
     }
+
     var indexMap = createLookMap("index")
 
     // render (HTML) footnotes reference
     text = text.replace(reFootnoteIndex,
-        function(match, index){
-            var tooltip = indexMap[index].content;
+        function (match, index) {
+            try {
+                var tooltip = marked.parse(indexMap[index].content);
+            } catch (error) {
+                tooltip = indexMap[index].content;
+            }
+
             return '<sup id="fnref:' + index + '">' +
-                '<a href="#fn:'+ index +'" rel="footnote">' +
-                '<span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="'
-                + tooltip +
-                '">[' + index +']</span></a></sup>';
+                '<a href="#fn:' + index + '" rel="footnote">' +
+                '<span class="hint--top hint--error hint--medium hint--rounded hint--bounce">[' + index + ']</span></a></sup>';
         });
 
     // sort footnotes by their index
@@ -71,8 +78,11 @@ function renderFootnotes(text) {
         html += '.</span>';
         html += '<span style="display: inline-block; vertical-align: top; margin-left: 10px;">';
         // 解析markdown
-        html += footNote.content; // todo 解析 markdown
-        // html += md.renderInline(footNote.content.trim());
+        try {
+            html += marked.parse(footNote.content.trim());
+        } catch (e) {
+            html += footNote.content.trim();
+        }
         html += '<a href="#fnref:' + footNote.index + '" rev="footnote"> ↩</a></span></li>';
     });
 
@@ -87,7 +97,7 @@ function renderFootnotes(text) {
     return text;
 }
 
-hexo.extend.filter.register('before_post_render', function(data) {
+hexo.extend.filter.register('before_post_render', function (data) {
     data.content = renderFootnotes(data.content);
     return data;
 });
