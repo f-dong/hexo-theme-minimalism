@@ -1,5 +1,3 @@
-import marked from "hexo/lib/models/types/moment";
-
 /**
  * Render markdown footnotes
  * @param {String} text
@@ -8,6 +6,7 @@ import marked from "hexo/lib/models/types/moment";
 function renderFootnotes(text) {
     try { // 防止 hexo 版本过低导致报错
         var marked = require('marked');
+        marked.parse("# 123")
     } catch (e) {
         return text;
     }
@@ -55,14 +54,16 @@ function renderFootnotes(text) {
     text = text.replace(reFootnoteIndex,
         function (match, index) {
             try {
-                var tooltip = marked.parse(indexMap[index].content);
+                var tooltip = handleHtml(marked.parse(indexMap[index].content));
             } catch (error) {
                 tooltip = indexMap[index].content;
             }
 
             return '<sup id="fnref:' + index + '">' +
                 '<a href="#fn:' + index + '" rel="footnote">' +
-                '<span class="hint--top hint--error hint--medium hint--rounded hint--bounce">[' + index + ']</span></a></sup>';
+                '<span class="hint--top hint--error hint--medium hint--rounded hint--bounce">[' + index + ']' +
+                '<div class="hint--pop-ups">'+tooltip+'</div>' +
+                '</span></a></sup>';
         });
 
     // sort footnotes by their index
@@ -79,7 +80,7 @@ function renderFootnotes(text) {
         html += '<span style="display: inline-block; vertical-align: top; margin-left: 10px;">';
         // 解析markdown
         try {
-            html += marked.parse(footNote.content.trim());
+            html += handleHtml(marked.parse(footNote.content.trim()));
         } catch (e) {
             html += footNote.content.trim();
         }
@@ -94,6 +95,12 @@ function renderFootnotes(text) {
         text += '<ol style="list-style: none; padding-left: 0; margin-left: 40px">' + html + '</ol>';
         text += '</div></div>';
     }
+    return text;
+}
+
+function handleHtml(text) {
+    text = text.replace(/^(\s|<p>|<\/p>)+|(\s|<p>|<\/p>)+$/g, '');
+
     return text;
 }
 
