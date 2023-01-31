@@ -12,9 +12,9 @@ function renderFootnotes(text) {
     }
 
     let footnotes = [];
-    let reFootnoteContent = /\[\^(\d+)\]: ?([\S\s]+?)(?=\[\^(?:\d+)\]|\n\n|$)/g;
-    let reInlineFootnote = /\[\^(\d+)\]\((.+?)\)/g;
-    let reFootnoteIndex = /\[\^(\d+)\]/g;
+    let reFootnoteContent = /\[\^(\d+)]: ?([\S\s]+?)(?=\[\^(\d+)]|\n\n|$)/g;
+    let reInlineFootnote = /\[\^(\d+)]\((.+?)\)/g;
+    let reFootnoteIndex = /\[\^(\d+)]/g;
     let html = '';
 
     // threat all inline footnotes
@@ -53,16 +53,13 @@ function renderFootnotes(text) {
     // render (HTML) footnotes reference
     text = text.replace(reFootnoteIndex,
         function (match, index) {
-            try {
-                var tooltip = handleHtml(marked.parse(indexMap[index].content));
-            } catch (error) {
-                tooltip = indexMap[index].content;
-            }
+
+            var tooltip = handleHtml(marked.parse(indexMap[index].content));
 
             return '<sup id="fnref:' + index + '">' +
                 '<a href="#fn:' + index + '" rel="footnote">' +
-                '<span class="hint--top hint--error hint--medium hint--rounded hint--bounce">[' + index + ']' +
-                '<div class="hint--pop-ups">'+tooltip+'</div>' +
+                '<span class="footnote--top">[' + index + ']' +
+                '<content class="footnote--pop-ups">'+tooltip+'</content>' +
                 '</span></a></sup>';
         });
 
@@ -79,12 +76,8 @@ function renderFootnotes(text) {
         html += '.</span>';
         html += '<span style="display: inline-block; vertical-align: top; margin-left: 10px;">';
         // 解析markdown
-        try {
-            html += handleHtml(marked.parse(footNote.content.trim()));
-        } catch (e) {
-            html += footNote.content.trim();
-        }
-        html += '<a href="#fnref:' + footNote.index + '" rev="footnote"> ↩</a></span></li>';
+        html += handleHtml(marked.parse(footNote.content.trim()));
+        html += '<a href="#fnref:' + footNote.index + '"> ↩</a></span></li>';
     });
 
     // add footnotes at the end of the content
@@ -98,6 +91,7 @@ function renderFootnotes(text) {
     return text;
 }
 
+// 处理一下输出的 html
 function handleHtml(text) {
     text = text.replace(/^(\s|<p>|<\/p>)+|(\s|<p>|<\/p>)+$/g, '');
 
