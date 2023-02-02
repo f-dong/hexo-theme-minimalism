@@ -190,6 +190,31 @@ prismjs:
 
 主题中默认的 `prismjs` 主题是 `Tomorrow Night`，如果你想定制自己的主题，可以前往 [prismjs 下载页面](https://prismjs.com/download.html) 定制下载自己喜欢的主题 `css` 文件，然后将此 css 主题文件取名为 `prism.css`，替换掉 `hexo-theme-minimalism` 主题文件夹中的 `source/style/prism.css` 文件即可。
 
+
+### 脚注
+
+可以附在文章页面的最底端的，对某些东西加以说明，印在书页下端的注文。 脚注和尾注是对文本的补充说明。
+
+本主题支持 `markdown` 语法的脚注，使用方法如下：
+
+```markdown
+基本脚注[^1]
+这是一个内联脚注[^2](内联脚注)
+另一个[^3]
+另一个[^4]
+
+
+[^1]: 基本脚注内容
+[^3]: 段落
+脚注
+内容
+[^4]: 一些脚注内容 [markdown](https://en.wikipedia.org/wiki/Markdown)
+```
+
+[点击这里](https://www.codeover.cn/hexo-footnotes/) 查看示例
+
+本功能参考了 [hexo-reference](https://github.com/kchen0x/hexo-reference)
+
 ### 中文链接转拼音（建议安装）
 
 如果你的文章名称是中文的，那么 Hexo 默认生成的永久链接也会有中文，这样不利于 `SEO`。我们可以用 [hexo-permalink-pinyin](https://github.com/viko16/hexo-permalink-pinyin) Hexo 插件使在生成文章时生成中文拼音的永久链接。
