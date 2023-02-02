@@ -54,6 +54,9 @@ function renderFootnotes(text) {
     text = text.replace(reFootnoteIndex,
         function (match, index) {
 
+            if (!indexMap[index]) {
+                return '';
+            }
             var tooltip = handleHtml(marked.parse(indexMap[index].content));
 
             return '<sup id="fnref:' + index + '">' +
