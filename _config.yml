@@ -75,4 +75,4 @@ bottom_source:
 # 脚注
 footnote:
   enable: true # 是否开启脚注解析
-  ignoreCodeBlock: true # 是否忽略代码块中的脚注
+  ignoreCodeBlock: false # 是否忽略代码块中的脚注
