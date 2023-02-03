@@ -214,7 +214,9 @@ prismjs:
 
 [点击这里](https://www.codeover.cn/hexo-footnotes/) 查看示例
 
-本功能参考了 [hexo-reference](https://github.com/kchen0x/hexo-reference)
+- 默认不过滤代码块内的脚注，即在代码块内的脚注也会被渲染出来。如果你需要过滤代码块内的脚注，可以在主题配置文件 `_config.yml` 中设置 `footnote.ignoreCodeBlock` 的值为 `true`。
+- 如需禁用脚注，可在主题配置文件 `_config.yml` 中设置 `footnote.enable` 的值为 `false`
+- 本功能参考了 [hexo-reference](https://github.com/kchen0x/hexo-reference)
 
 ### 中文链接转拼音（建议安装）
 

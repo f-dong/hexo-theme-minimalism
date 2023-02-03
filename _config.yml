@@ -71,3 +71,8 @@ bottom_link:
 # 底部显示来源信息
 bottom_source:
   enable: true
+
+# 脚注
+footnote:
+  enable: true # 是否开启脚注解析
+  ignoreCodeBlock: true # 是否忽略代码块中的脚注

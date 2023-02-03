@@ -1,9 +1,10 @@
 /**
  * Render markdown footnotes
  * @param {String} text
+ * @param {boolean} ignoreCodeBlock
  * @returns {String} text
  */
-function renderFootnotes(text) {
+function renderFootnotes(text, ignoreCodeBlock) {
     try { // 防止 hexo 版本过低导致报错
         var marked = require('marked');
         marked.parse("# 123")
@@ -16,6 +17,15 @@ function renderFootnotes(text) {
     let reInlineFootnote = /\[\^(\d+)]\((.+?)\)/g;
     let reFootnoteIndex = /\[\^(\d+)]/g;
     let html = '';
+
+    // 代码块内的脚注不处理
+    if (ignoreCodeBlock) {
+        text = text.replace(/(<hexoPostRenderCodeBlock>[\S\s]+?<\/hexoPostRenderCodeBlock>)/g, function (match, code) {
+            return code.replace(reFootnoteIndex, function (match, index) {
+                return '[^<span>' + index + '</span>]';
+            });
+        });
+    }
 
     // threat all inline footnotes
     text = text.replace(reInlineFootnote, function (match, index, content) {
@@ -102,6 +112,12 @@ function handleHtml(text) {
 }
 
 hexo.extend.filter.register('before_post_render', function (data) {
-    data.content = renderFootnotes(data.content);
+    // 主题配置
+    var themeConfig = hexo.theme.config;
+    // 是否开启脚注
+    if (themeConfig.footnote && themeConfig.footnote.enable) {
+        data.content = renderFootnotes(data.content, themeConfig.footnote.ignoreCodeBlock);
+    }
+
     return data;
 });
