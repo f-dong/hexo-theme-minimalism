@@ -10,7 +10,7 @@
 
 <script src="<%= url_for('/js/main.js') %>"></script>
 
-<% if (theme.gitalk.enable && window.is_post) { %>
+<% if (theme.gitalk.enable && is_post()) { %>
 <% if (theme.use_bootcdn) { %>
     <script src="https://cdn.bootcdn.net/ajax/libs/gitalk/1.7.2/gitalk.min.js"></script>
 <% } else { %>
