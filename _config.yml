@@ -76,3 +76,7 @@ bottom_source:
 footnote:
   enable: true # 是否开启脚注解析
   ignoreCodeBlock: false # 是否忽略代码块中的脚注
+
+# 图片配置
+image:
+  lazyload_enable: false # 图片懒加载
