@@ -14,10 +14,10 @@ $(".menu-switch").click(function () {
 
 if (window.is_post) {
     // 图片放大
-    $(".post-detail img").each(function() {
-        var currentImage = $(this);
-        currentImage.wrap("<a href='" + currentImage.attr("src") + "' data-fancybox='lightbox' data-caption='" + currentImage.attr("alt") + "'></a>");
-    });
+    // $(".post-detail img").each(function() {
+    //     var currentImage = $(this);
+    //     currentImage.wrap("<a href='" + currentImage.attr("src") + "' data-fancybox='lightbox' data-caption='" + currentImage.attr("alt") + "'></a>");
+    // });
 
     // 代码复制
     var $copyIcon = $('<i class="fa-solid icon icon-copy copy-code" title="复制代码"></i>');
