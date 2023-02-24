@@ -1,2 +1,4 @@
 .DS_Store
 .idea
+yarn.lock
+node_modules

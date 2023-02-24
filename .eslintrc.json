@@ -1,0 +1,14 @@
+{
+  "extends": ["hexo"],
+  "rules": {
+    "no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "args": "none",
+        "caughtErrors": "none"
+      }
+    ],
+    "one-var": ["off"]
+  }
+}
