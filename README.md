@@ -1,5 +1,6 @@
 # hexo 极简风格主题
 
+[![Lint Status](https://github.com/f-dong/hexo-theme-minimalism/workflows/Test/badge.svg)](https://github.com/f-dong/hexo-theme-minimalism/actions/workflows/test.yml)
 [![Lint Status](https://github.com/f-dong/hexo-theme-minimalism/workflows/Lint/badge.svg)](https://github.com/f-dong/hexo-theme-minimalism/actions/workflows/lint.yml)
 [![NPM version](https://img.shields.io/npm/v/hexo-theme-minimalism?color=red&logo=npm&style=flat-square)](https://www.npmjs.com/package/hexo-theme-minimalism)
 [![Github License](https://img.shields.io/github/license/f-dong/hexo-theme-minimalism.svg?style=flat-square)](https://github.com/f-dong/hexo-theme-minimalism/blob/main/LICENSE)
