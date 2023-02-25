@@ -1,5 +1,5 @@
 {
-  "extends": ["hexo"],
+  "extends": ["hexo", "plugin:json/recommended"],
   "rules": {
     "no-unused-vars": [
       "warn",
