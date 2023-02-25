@@ -1,11 +1,12 @@
 # hexo 极简风格主题
 
+[![Lint Status](https://github.com/f-dong/hexo-theme-minimalism/workflows/Lint/badge.svg)](https://github.com/f-dong/hexo-theme-minimalism/actions/workflows/lint.yml)
+[![NPM version](https://img.shields.io/npm/v/hexo-theme-minimalism?color=red&logo=npm&style=flat-square)](https://www.npmjs.com/package/hexo-theme-minimalism)
+[![Github License](https://img.shields.io/github/license/f-dong/hexo-theme-minimalism.svg?style=flat-square)](https://github.com/f-dong/hexo-theme-minimalism/blob/main/LICENSE)
+[![Node.js Version](https://img.shields.io/badge/node-%3E=12.0-success.svg?style=flat-square&logo=Node.js&longCache=true)](https://hexo.io)
+[![Required Hexo version](https://img.shields.io/badge/hexo-%3E=5.0.0-blue?style=flat-square&logo=hexo)](https://hexo.io)
 
 
-<p align="center">
-<a herf="https://hexo.io"><img src="https://img.shields.io/badge/hexo-%3E%3D%205.0.0-blue.svg"></a>
-<a title="license"><img src="https://img.shields.io/badge/license-MIT-green"></a>
-</p>
 
 ![预览图片](https://user-images.githubusercontent.com/40230452/189160566-c4f4070a-a64e-4843-81eb-7885c45f71c3.png)
 

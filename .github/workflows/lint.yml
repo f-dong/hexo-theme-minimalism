@@ -1,4 +1,4 @@
-name: Code Linting
+name: Lint
 
 on: [push, pull_request]
 
