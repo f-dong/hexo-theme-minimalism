@@ -9,7 +9,6 @@
  */
 function renderFootnotes(text, ignoreCodeBlock) {
   // 防止 hexo 版本过低导致报错
-  // eslint-disable-next-line node/no-extraneous-require
   const marked = require('marked');
   try {
     marked.parse('# 123');
