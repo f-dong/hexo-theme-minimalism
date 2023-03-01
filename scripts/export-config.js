@@ -5,13 +5,13 @@
 /**
  * Export theme config to js
  */
-hexo.extend.helper.register('export_config', function () {
+hexo.extend.helper.register('export_config', function() {
 
-  let {theme} = this;
+  const {theme} = this;
 
-  let theme_config = {
-    image: theme.image,
-  }
+  const theme_config = {
+    image: theme.image
+  };
 
   return `<script id="hexo-configurations">
     window.theme_config = ${JSON.stringify(theme_config)};
