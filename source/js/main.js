@@ -75,7 +75,7 @@ if (window.is_post) {
 
   // 文章详情侧边目录
   const mainNavLinks = document.querySelectorAll('.top-box a');
-  window.addEventListener('scroll', event => {
+  window.addEventListener('scroll', () => {
     const fromTop = window.scrollY + 100;
 
     mainNavLinks.forEach((link, index) => {
