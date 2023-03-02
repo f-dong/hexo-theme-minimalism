@@ -1,6 +1,7 @@
 {
   "extends": ["hexo", "plugin:json/recommended"],
   "rules": {
+    "linebreak-style": [0, "error", "window"],
     "no-unused-vars": [
       "warn",
       {
