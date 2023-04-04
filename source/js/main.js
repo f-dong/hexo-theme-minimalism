@@ -2,16 +2,20 @@
 'use strict';
 
 // 菜单
-$('.menu-switch').click(function() {
-  if ($(this).hasClass('icon-menu-outline')) {
-    $(this).removeClass(' icon-menu-outline ').addClass('icon-close-outline');
-    $('.menu-container').css('opacity', '1').css('height', 'auto');
+document.querySelector('.menu-switch').addEventListener('click', function() {
+  if (this.classList.contains('icon-menu-outline')) {
+    this.classList.remove('icon-menu-outline');
+    this.classList.add('icon-close-outline');
+    document.querySelector('.menu-container').style.opacity = '1';
+    document.querySelector('.menu-container').style.height = 'auto';
   } else {
-    $(this).addClass(' icon-menu-outline ').removeClass('icon-close-outline');
-    $('.menu-container').css('opacity', '0');
-
-    const that = $(this);
-    setTimeout(() => { that.hasClass('icon-menu-outline') && $('.menu-container').css('height', '0'); }, 600);
+    this.classList.add('icon-menu-outline');
+    this.classList.remove('icon-close-outline');
+    document.querySelector('.menu-container').style.opacity = '0';
+    const that = this;
+    setTimeout(() => {
+      that.classList.contains('icon-menu-outline') && (document.querySelector('.menu-container').style.height = '0');
+    }, 600);
   }
 });
 
@@ -23,31 +27,42 @@ if (window.is_post) {
   // });
 
   // 代码复制
-  const $copyIcon = $('<i class="fa-solid icon icon-copy copy-code" title="复制代码"></i>');
-  $('.post-detail figure').append($copyIcon);
-  $('.post-detail pre[class*=language-].line-numbers').append($copyIcon);
-  $('.post-detail .copy-code').on('click', function() {
-    const selection = window.getSelection();
-    const range = document.createRange();
-    const table = $(this).prev('table');
-    if (table.length) {
-      range.selectNodeContents($(this).prev('table').find('.code').find('pre')[0]);
-    } else {
-      console.log($(this).prev('code')[0]);
-      range.selectNodeContents($(this).prev('code')[0]);
-    }
+  const copyIcon = document.createElement('i');
+  copyIcon.className = 'fa-solid icon icon-copy copy-code';
+  copyIcon.title = '复制代码';
+  const figures = document.querySelectorAll('.post-detail figure');
+  for (let i = 0; i < figures.length; i++) {
+    figures[i].appendChild(copyIcon.cloneNode(true));
+  }
+  const codeBlocks = document.querySelectorAll('.post-detail pre[class*=language-].line-numbers');
+  for (let i = 0; i < codeBlocks.length; i++) {
+    codeBlocks[i].appendChild(copyIcon.cloneNode(true));
+  }
+  const copyCodeBtns = document.querySelectorAll('.post-detail .copy-code');
+  for (let i = 0; i < copyCodeBtns.length; i++) {
+    copyCodeBtns[i].addEventListener('click', function() {
+      const selection = window.getSelection();
+      const range = document.createRange();
+      const table = this.previousElementSibling.tagName === 'TABLE' ? this.previousElementSibling : null;
+      if (table) {
+        range.selectNodeContents(table.querySelector('.code pre'));
+      } else {
+        range.selectNodeContents(this.previousElementSibling);
+      }
 
-    selection.removeAllRanges();
-    selection.addRange(range);
-    selection.toString();
-    document.execCommand('copy');
-    selection.removeAllRanges();
+      selection.removeAllRanges();
+      selection.addRange(range);
+      selection.toString();
+      document.execCommand('copy');
+      selection.removeAllRanges();
 
-    $(this).html('<span class="copy-success"> 复制成功</span>');
-    setTimeout(() => {
-      $(this).html('');
-    }, 2500);
-  });
+      this.innerHTML = '<span class="copy-success"> 复制成功</span>';
+      const that = this;
+      setTimeout(() => {
+        that.innerHTML = '';
+      }, 2500);
+    });
+  }
 
   // 代码语言
   $(() => {
