@@ -65,27 +65,26 @@ if (window.is_post) {
   }
 
   // 代码语言
-  $(() => {
-    $('code').each(function() {
-      const code_language = $(this).attr('class');
-
-      if (!code_language) {
-        return true;
+  document.addEventListener('DOMContentLoaded', () => {
+    const codeBlocks = document.querySelectorAll('code');
+    for (let i = 0; i < codeBlocks.length; i++) {
+      const codeLanguage = codeBlocks[i].getAttribute('class');
+      if (!codeLanguage) {
+        continue;
       }
-      const lang_name = code_language.replace('line-numbers', '').trim().replace('highlight', '').trim().replace('language-', '').trim();
+      const langName = codeLanguage.replace('line-numbers', '').trim().replace('highlight', '').trim().replace('language-', '').trim();
+      codeBlocks[i].setAttribute('data-content-after', langName || 'CODE');
+    }
 
-      $(this).attr('data-content-after', lang_name || 'CODE');
-    });
-    $('.highlight').each(function() {
-      const code_language = $(this).attr('class');
-
-      if (!code_language) {
-        return true;
+    const highlightBlocks = document.querySelectorAll('.highlight');
+    for (let i = 0; i < highlightBlocks.length; i++) {
+      const codeLanguage = highlightBlocks[i].getAttribute('class');
+      if (!codeLanguage) {
+        continue;
       }
-      const lang_name = code_language.replace('highlight', '').trim();
-
-      $(this).attr('data-content-after', lang_name || 'CODE');
-    });
+      const langName = codeLanguage.replace('highlight', '').trim();
+      highlightBlocks[i].setAttribute('data-content-after', langName || 'CODE');
+    }
   });
 
   // 文章详情侧边目录
