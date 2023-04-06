@@ -1,4 +1,4 @@
-/* global $, window, document */
+/* global window, document */
 'use strict';
 
 // 菜单
@@ -115,12 +115,16 @@ if (window.is_post) {
   });
 
   // 点击锚点滚动条偏移
-  $('.top-box-link').click(() => {
-    setTimeout(() => {
-      $(window).scrollTop($(window).scrollTop() - 54);
-      console.log($(window).scrollTop() - 54, '滚动条位置');
-    }, 0);
+  const topBoxLinks = document.querySelectorAll('.top-box-link');
+  topBoxLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      setTimeout(() => {
+        window.scrollTo(window.pageXOffset, window.pageYOffset - 54);
+        console.log(window.pageYOffset - 54, '滚动条位置');
+      }, 0);
+    });
   });
+
 }
 
 function lazyload(imgs, data) {
