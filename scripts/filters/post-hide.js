@@ -56,18 +56,20 @@ hexo.extend.generator.register('index', locals => {
     return hide.home_hide === false;
   });
 
-  const pagination = require('hexo-pagination');
+  const { index_generator } = hexo.config;
+  locals.posts = locals.posts.sort(index_generator.order_by || '-date');
 
-  if (hexo.config.index_generator && hexo.config.index_generator.per_page > 0) {
-    return pagination(hexo.config.index_generator.path || '', locals.posts, {
-      perPage: hexo.config.per_page,
+  if (index_generator.per_page > 0) {
+    const pagination = require('hexo-pagination');
+    return pagination(index_generator.path || '', locals.posts, {
+      perPage: index_generator.per_page || hexo.config.per_page,
       layout: 'index',
       data: {}
     });
   }
 
   return {
-    path: hexo.config.index_generator ? hexo.config.index_generator.path || '' : '',
+    path: index_generator.path || '',
     data: locals,
     layout: 'index'
   };
@@ -85,10 +87,7 @@ hexo.extend.helper.register('is_hide', post => {
     return true;
   }
 
-  if (hide.tag_hide && this.is_tag()) {
-    return true;
-  }
+  return !!(hide.tag_hide && this.is_tag());
 
-  return false;
 });
 
