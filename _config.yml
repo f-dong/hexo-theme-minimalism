@@ -79,4 +79,5 @@ footnote:
 
 # 图片配置
 image:
-  lazyload_enable: false # 图片懒加载
+  lazyload_enable: true # 图片懒加载
+  photo_zoom: simple-lightbox # 可选 simple-lightbox、fancybox、false(禁用)
