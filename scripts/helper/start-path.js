@@ -45,7 +45,9 @@ hexo.extend.helper.register('js_link', name => {
   };
 
   if (hexo.theme.config.use_bootcdn) {
-    return boot_css_list[name];
+    if (boot_css_list[name].indexOf('http') === 0 || boot_css_list[name].indexOf('//') === 0) {
+      return boot_css_list[name];
+    }
   }
 
   const url_for = hexo.extend.helper.get('url_for').bind(hexo);
