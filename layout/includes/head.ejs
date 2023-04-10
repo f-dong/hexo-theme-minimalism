@@ -42,28 +42,9 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <link rel="shortcut icon" href="<%= url_for('/favicon.ico') %>">
-<link rel="stylesheet" href="<%= url_for('/style/main.css') %>">
+<link rel="stylesheet" href="<%= css_link('theme_main') %>">
 
-<% if (theme.use_bootcdn) { %>
+
 <% if (theme.gitalk.enable && is_post()) { %>
-    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/gitalk/1.7.2/gitalk.css"/>
-<% } %>
-<% } else { %>
-<% if (theme.gitalk.enable && is_post()) { %>
-    <link rel="stylesheet" href="<%= url_for('/style/gitalk.css') %>" />
-<% } %>
-<% } %>
-
-<% if (theme.ga) { %>
-<script async src="https://www.googletagmanager.com/gtag/js?id=<%= theme.ga %>"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', '<%= theme.ga %>');
-</script>
-<% } %>
-<% if (theme.baidu_tongji) { %>
-<script async src="https://hm.baidu.com/hm.js?<%= theme.baidu_tongji %>"></script>
+    <link rel="stylesheet" href="<%= css_link('gitalk') %>"/>
 <% } %>

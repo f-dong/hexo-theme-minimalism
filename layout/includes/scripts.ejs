@@ -1,16 +1,11 @@
 
 <%- export_config() %>
 
-<script src="<%= url_for('/js/main.js') %>"></script>
+<script src="<%= js_link('theme_main') %>"></script>
 
 <% if (theme.gitalk.enable && is_post()) { %>
-<% if (theme.use_bootcdn) { %>
-    <script src="https://cdn.bootcdn.net/ajax/libs/gitalk/1.7.2/gitalk.min.js"></script>
-<% } else { %>
-    <script src="<%= url_for('/js/gitalk.min.js') %>"></script>
-<% } %>
+<script src="<%= js_link('gitalk') %>"></script>
 <script>
-
   var gitalk = new Gitalk({
     clientID: '<%= theme.gitalk.clientId %>',
     clientSecret: '<%= theme.gitalk.clientSecret %>',
@@ -25,6 +20,20 @@
   gitalk.render('gitalk-container')
 
 </script>
+<% } %>
+
+<% if (theme.ga) { %>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=<%= theme.ga %>"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', '<%= theme.ga %>');
+    </script>
+<% } %>
+<% if (theme.baidu_tongji) { %>
+    <script async src="https://hm.baidu.com/hm.js?<%= theme.baidu_tongji %>"></script>
 <% } %>
 
 
