@@ -8,7 +8,6 @@ hexo.extend.helper.register('css_link', name => {
     'theme_main': '/style/main.css',
     'jquery.fancybox': '/style/jquery.fancybox.min.css',
     'gitalk': '/style/gitalk.css',
-    'prism': '/style/prism.css',
     'simple-lightbox': '/style/simple-lightbox.min.css'
   };
 
@@ -16,7 +15,6 @@ hexo.extend.helper.register('css_link', name => {
     'theme_main': '/style/main.css',
     'jquery.fancybox': 'https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css',
     'gitalk': 'https://cdn.bootcdn.net/ajax/libs/gitalk/1.7.2/gitalk.css',
-    'prism': '/style/prism.css',
     'simple-lightbox': 'https://cdn.bootcdn.net/ajax/libs/simplelightbox/2.13.0/simple-lightbox.min.css'
   };
 
