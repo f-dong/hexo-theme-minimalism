@@ -6,6 +6,20 @@
 const { version } = require('../../package.json');
 const themeVersion = version;
 
+hexo.extend.helper.register('static_link', name => {
+  const css_list = {
+    '/images/loading.svg': '/images/loading.svg'
+  };
+
+  const path = renderPath(css_list[name]);
+  if (path.indexOf('http') === 0 || path.indexOf('//') === 0) {
+    return path;
+  }
+
+  const url_for = hexo.extend.helper.get('url_for').bind(hexo);
+  return url_for(path);
+});
+
 hexo.extend.helper.register('css_link', name => {
   const config = cdnConfig();
   const css_list = {

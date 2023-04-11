@@ -20,7 +20,9 @@ function render(data) {
         return match;
       }
 
-      let img = `<img ${attrBegin} src="/images/loading.svg" data-src="${src}" ${attrEnd} lazyload>`;
+      const static_link = hexo.extend.helper.get('static_link').bind(hexo);
+      const loadImg = static_link('/images/loading.svg');
+      let img = `<img ${attrBegin} src="${loadImg}" data-src="${src}" ${attrEnd} lazyload>`;
       if (!image.lazyload_enable) {
         img = `<img ${attrBegin} src="${src}" ${attrEnd}>`;
       }

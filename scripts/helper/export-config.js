@@ -9,7 +9,8 @@ hexo.extend.helper.register('export_config', function() {
 
   const {theme} = this;
 
-  theme.highlight = this.config.highlight.enable ? 'highlight' : 'prismjs';
+  theme.highlight = this.config.highlight.enable ? {enable: true} : {enable: false};
+  theme.prismjs = this.config.prismjs.enable ? {enable: true} : {enable: false};
 
   const { image } = Object.assign({image: {
     lazyload_enable: true,

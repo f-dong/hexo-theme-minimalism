@@ -1,7 +1,7 @@
 @import "_core/colors";
 @import "_core/base";
-@import "_core/hljs" if hexo-config('highlight') == 'highlight';
-@import "prism.css" if hexo-config('highlight') == 'prismjs';
+@import "_core/hljs" if hexo-config('highlight.enable');
+@import "prism.css" if hexo-config('prismjs.enable');
 @import "_core/footnotes";
 
 @import "_blocks/fonts";
