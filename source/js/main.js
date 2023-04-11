@@ -8,10 +8,12 @@ document.querySelector('.menu-switch').addEventListener('click', function() {
     this.classList.add('icon-close-outline');
     document.querySelector('.menu-container').style.opacity = '1';
     document.querySelector('.menu-container').style.height = 'auto';
+    document.querySelector('.menu-container').style['z-index'] = 1024;
   } else {
     this.classList.add('icon-menu-outline');
     this.classList.remove('icon-close-outline');
     document.querySelector('.menu-container').style.opacity = '0';
+    document.querySelector('.menu-container').style['z-index'] = '0';
     const that = this;
     setTimeout(() => {
       that.classList.contains('icon-menu-outline') && (document.querySelector('.menu-container').style.height = '0');
