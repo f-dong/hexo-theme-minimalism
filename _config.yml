@@ -54,9 +54,6 @@ gitalk:
   owner: # 仓库所有者
   createIssueManually: false # 如果当前页面没有相应的 isssue 且登录的用户属于 admin，则会自动创建 issue。如果设置为 true，则显示一个初始化页面，创建 issue 需要点击 init 按钮。
 
-# 是否使用 bootcdn
-use_bootcdn: false
-
 # 底部链接
 bottom_link:
   rss:
@@ -79,4 +76,11 @@ footnote:
 
 # 图片配置
 image:
-  lazyload_enable: false # 图片懒加载
+  lazyload_enable: true # 图片懒加载
+  photo_zoom: simple-lightbox # 可选 simple-lightbox、fancybox、false(禁用)
+  
+# cdn 配置
+cdn:
+  enable: false
+  # CDN 提供者
+  provider: jsdelivr # 可选 jsdelivr、unpkg、bootcdn

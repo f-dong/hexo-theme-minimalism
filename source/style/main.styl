@@ -1,6 +1,7 @@
 @import "_core/colors";
 @import "_core/base";
-@import "_core/hljs";
+@import "_core/hljs" if hexo-config('highlight.enable');
+@import "prism.css" if hexo-config('prismjs.enable');
 @import "_core/footnotes";
 
 @import "_blocks/fonts";
@@ -15,18 +16,19 @@
 @import "_blocks/tags";
 @import "_blocks/figure";
 
-@import "_core/night-node";
+@import "_core/night-node" if hexo-config('dark_theme.enable');
 
-pre[class*=language-] {
-  padding: 0 !important;
-  margin: 0 !important;
-}
-pre[class*=language-] code {
-  color: #476582;
-}
-pre[class*=language-].line-numbers {
-  background: #fafafa;
-}
-:not(pre) > code[class*=language-], pre[class*=language-] {
-  background: none;
-}
+if hexo-config('highlight') == 'prismjs'
+  pre[class*=language-] {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  pre[class*=language-] code {
+    color: #476582;
+  }
+  pre[class*=language-].line-numbers {
+    background: #fafafa;
+  }
+  :not(pre) > code[class*=language-], pre[class*=language-] {
+    background: none;
+  }

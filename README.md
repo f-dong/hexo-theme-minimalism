@@ -45,6 +45,8 @@ Table of contents generated with [gh-md-toc](https://github.com/ekalinin/github-
 
 ## 特性
 
+- 原生 JavaScript 实现，去 jQuery 化
+- 极致的运行速度
 - 简洁大方, 文章内容美观易读
 - 响应式设计，博客在桌面端、平板、手机等设备上均能很好的展现
 - 独特的分类归档页

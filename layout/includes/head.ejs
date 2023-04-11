@@ -44,34 +44,7 @@
 <link rel="shortcut icon" href="<%= url_for('/favicon.ico') %>">
 <link rel="stylesheet" href="<%= url_for('/style/main.css') %>">
 
-<% if (theme.use_bootcdn) { %>
-<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
 
 <% if (theme.gitalk.enable && is_post()) { %>
-    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/gitalk/1.7.2/gitalk.css"/>
-<% } %>
-
-<% } else { %>
-<link rel="stylesheet" href="<%= url_for('/style/jquery.fancybox.min.css') %>">
-
-<% if (theme.gitalk.enable && is_post()) { %>
-    <link rel="stylesheet" href="<%= url_for('/style/gitalk.css') %>" />
-<% } %>
-<% } %>
-<% if (config.prismjs.enable) { %>
-    <link rel="stylesheet" href="<%= url_for('/style/prism.css') %>"/>
-<% } %>
-
-<% if (theme.ga) { %>
-<script async src="https://www.googletagmanager.com/gtag/js?id=<%= theme.ga %>"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', '<%= theme.ga %>');
-</script>
-<% } %>
-<% if (theme.baidu_tongji) { %>
-<script async src="https://hm.baidu.com/hm.js?<%= theme.baidu_tongji %>"></script>
+    <link rel="stylesheet" href="<%= css_link('gitalk') %>"/>
 <% } %>
