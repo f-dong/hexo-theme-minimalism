@@ -3,7 +3,7 @@
   <div class="social-container">
     <% ['github', 'twitter', 'weibo', 'zhihu', 'facebook'].forEach((item) => { %>
       <% if (theme.contact[item]) { %>
-        <a href="<%= theme.contact[item] %>" target="_blank">
+        <a aria-label="跳转至<%= item %>" href="<%= theme.contact[item] %>" target="_blank">
           <i class="icon icon-<%= item %>"></i>
         </a>
       <% } %>
