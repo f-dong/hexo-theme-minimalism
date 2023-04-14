@@ -22,12 +22,11 @@
           <span>
             <i class="icon icon-pricetags-outline"></i>
             <% post.tags.forEach(function(tag, index) { %>
-              <a>
+
                 <%= tag.name %>
                 <% if (index !== post.tags.length - 1) { %>
                   ，
                 <% } %>
-              </a>
             <% }); %>
           </span>
         <% } %>
