@@ -22,7 +22,7 @@
           <span>
             <i class="icon icon-pricetags-outline"></i>
             <% post.tags.forEach(function(tag, index) { %>
-              <a aria-label="跳转至<%= tag.name %>分类" href="<%= url_for(tag.path) %>">
+              <a>
                 <%= tag.name %>
                 <% if (index !== post.tags.length - 1) { %>
                   ，
