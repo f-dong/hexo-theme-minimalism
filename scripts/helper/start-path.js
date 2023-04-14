@@ -36,10 +36,10 @@ hexo.extend.helper.register('css_link', name => {
     'simple-lightbox': 'https://cdn.bootcdn.net/ajax/libs/simplelightbox/2.13.0/simple-lightbox.min.css'
   };
 
-  let path = renderPath(css_list[name]);
+  let path = renderPath(css_list[name] ? css_list[name] : name);
 
   if (config.enable && config.provider === 'bootcdn') {
-    path = boot_css_list[name];
+    path = boot_css_list[name] ? boot_css_list[name] : name;
   }
 
   if (path.indexOf('http') === 0 || path.indexOf('//') === 0) {
@@ -68,10 +68,10 @@ hexo.extend.helper.register('js_link', name => {
     'simple-lightbox': 'https://cdn.bootcdn.net/ajax/libs/simplelightbox/2.13.0/simple-lightbox.min.js'
   };
 
-  let path = renderPath(js_list[name]);
+  let path = renderPath(js_list[name] ? js_list[name] : name);
 
   if (config.enable && config.provider === 'bootcdn') {
-    path = boot_js_list[name];
+    path = boot_js_list[name] ? boot_js_list[name] : name;
   }
 
   if (path.indexOf('http') === 0 || path.indexOf('//') === 0) {

@@ -21,7 +21,7 @@ function render(data) {
       }
 
       const static_link = hexo.extend.helper.get('static_link').bind(hexo);
-      const loadImg = static_link('/images/loading.svg');
+      const loadImg = static_link(image.lazyload_placeholder || '/images/loading.svg');
       let img = `<img ${attrBegin} src="${loadImg}" data-src="${src}" ${attrEnd} lazyload>`;
       if (!image.lazyload_enable) {
         img = `<img ${attrBegin} src="${src}" ${attrEnd}>`;
