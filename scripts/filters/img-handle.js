@@ -48,7 +48,7 @@ function appendJs(str, data) {
   }
 
   // 没有图片时，不加载js
-  if (data.page.content && data.page.content.indexOf('<img') === -1) {
+  if (!data.page.content || data.page.content.indexOf('<img') === -1) {
     return str;
   }
 
