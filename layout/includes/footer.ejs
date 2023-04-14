@@ -3,7 +3,7 @@
   <div class="social-container">
     <% ['github', 'twitter', 'weibo', 'zhihu', 'facebook'].forEach((item) => { %>
       <% if (theme.contact[item]) { %>
-        <a href="<%= theme.contact[item] %>" target="_blank">
+        <a aria-label="跳转至<%= item %>" href="<%= theme.contact[item] %>" target="_blank">
           <i class="icon icon-<%= item %>"></i>
         </a>
       <% } %>
@@ -17,7 +17,7 @@
     <% if (theme.bottom_source.enable || show_divide) { %>
      |
     <% } else {var show_divide = true} %>
-      <a class="<%= theme.bottom_link[key].class %>" href="<%- url_for(theme.bottom_link[key].url) %>" target="_blank"><%- theme.bottom_link[key].text %></a>
+      <a href="<%- url_for(theme.bottom_link[key].url) %>" target="_blank"><%- theme.bottom_link[key].text %></a>
   <% } %>
   <% }); %>
 </div>

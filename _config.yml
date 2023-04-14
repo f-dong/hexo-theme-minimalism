@@ -23,6 +23,7 @@ menu:
 # 深色主题
 dark_theme:
   enable: true
+  mode: auto # 可选 auto、dark
 
 # 联系方式
 contact:
@@ -31,9 +32,6 @@ contact:
   weibo:
   zhihu:
   facebook:
-
-# 是否显示封面图片
-showFeatureImage: true
 
 # 首页头像图片
 avatar: /images/avatar.png
@@ -59,11 +57,9 @@ bottom_link:
   rss:
     url:
     text: RSS
-    class: rss
   icp:
     url: # beian.miit.gov.cn
     text: # 沪ICP备 09007032号-1
-    class: icp
 
 # 底部显示来源信息
 bottom_source:
@@ -77,6 +73,7 @@ footnote:
 # 图片配置
 image:
   lazyload_enable: true # 图片懒加载
+  lazyload_placeholder: # 图片懒加载占位图
   photo_zoom: simple-lightbox # 可选 simple-lightbox、fancybox、false(禁用)
   
 # cdn 配置
