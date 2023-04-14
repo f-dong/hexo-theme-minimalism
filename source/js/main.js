@@ -152,7 +152,7 @@ function lazyload(imgs, data) {
             img.removeAttribute('loading');
             clearTimeout(loadImageTimeout);
           };
-        }, 500);
+        }, 300);
       }
     }
   });
