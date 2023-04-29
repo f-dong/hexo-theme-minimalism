@@ -34,7 +34,7 @@ Simplicity is key! When deciding to use Hexo for personal blogging, the main goa
 
 "Lightweight" means that the theme uses minimal design elements. There are fewer JavaScript and CSS files. Minimalism uses only CSS and pure native JS, and the theme itself doesn't depend on any third-party libraries. Here's an approximate performance report for a blog using the Minimalism theme:
 
-![Performance Report](https://user-images.githubusercontent.com/40230452/235286716-5d7e6f38-f1fd-411b-9bc7-836e12c657f7.png)
+![Performance Report](https://user-images.githubusercontent.com/40230452/235308517-e063cbb9-dbac-4934-bfd2-25e0689535aa.png)
 
 ## Documentation
 
