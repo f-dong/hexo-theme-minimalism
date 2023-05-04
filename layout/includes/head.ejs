@@ -1,11 +1,11 @@
 <%
     var title = page.title;
     // tags, categories, about pages title
-    if (title == 'tags') {
+    if (title === 'tags') {
         title = '标签 | '+ config.title;
-    } else if (title == 'categories') {
+    } else if (title === 'categories') {
         title = '分类归档 | '+ config.title;
-    } else if (title == 'about') {
+    } else if (title === 'about') {
         title = '关于 | '+ config.title;
     } else if (!title) {
         title = config.title;
@@ -45,6 +45,9 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="<%= title %>">
+<meta property="og:description" content="<%- description %>">
+<% if (page.img && page.img !== '') { %><meta property="og:image" content="<%= full_url_for(page.img) %>"><% } %>
 <link rel="shortcut icon" href="<%= url_for('/favicon.ico') %>">
 <link rel="stylesheet" href="<%= url_for('/style/main.css') %>">
 
