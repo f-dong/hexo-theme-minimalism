@@ -28,7 +28,7 @@
   "engines": {
     "node": ">=12.4.0"
   },
-  "homepage": "https://github.com/f-dong/hexo-theme-minimalism#readme",
+  "homepage": "https://minimalism.codeover.cn",
   "devDependencies": {
     "eslint": "^8.34.0",
     "eslint-config-hexo": "^5.0.0",
