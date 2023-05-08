@@ -19,4 +19,7 @@ function merge(target, source) {
 
 hexo.on('generateBefore', () => {
   merge(hexo.theme.config, hexo.config.theme_config);
+
+  hexo.theme.config.highlight = hexo.config.highlight.enable ? {enable: true} : {enable: false};
+  hexo.theme.config.prismjs = hexo.config.prismjs.enable ? {enable: true} : {enable: false};
 });
