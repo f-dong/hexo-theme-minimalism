@@ -5,7 +5,7 @@
 <% if (theme.comment.enable && theme.comment.system === 'gitalk') { %>
     <script src="<%= js_link('gitalk') %>"></script>
     <script>
-        const config = JSON.stringify("<%= theme.comment.config.gitalk %>")
+        const config = <%- JSON.stringify(theme.comment.config.gitalk) %>;
         const gitalk = new Gitalk({
             clientID: '<%= config.clientId %>',
             clientSecret: '<%= config.clientSecret %>',
@@ -30,15 +30,15 @@
         jq.src = "<%= js_link('twikoo') %>";
         document.getElementsByTagName('body')[0].appendChild(jq);
 
+        const config = <%- JSON.stringify(theme.comment.config.twikoo) %>;
         jq.onload = function () {
-            const config = <%- JSON.stringify(theme.comment.config.twikoo) %>
             twikoo.init({
                 envId: config.envId,
                 el: '#gitalk-container',
                 region: config.region,
                 path: location.pathname + (config.mark ? '?mark=' + config.mark : ''),
                 lang: "<%= config.language %>",
-            })
+            });
         }
     })()
 </script>

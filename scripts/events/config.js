@@ -22,4 +22,16 @@ hexo.on('generateBefore', () => {
 
   hexo.theme.config.highlight = hexo.config.highlight.enable ? {enable: true} : {enable: false};
   hexo.theme.config.prismjs = hexo.config.prismjs.enable ? {enable: true} : {enable: false};
+
+  // 评论系统，旧配置兼容
+  if (typeof hexo.theme.config.comment !== 'object' && hexo.theme.config.gitalk) {
+    hexo.theme.config.comment = {
+      enable: hexo.theme.config.gitalk.enable,
+      type: 'gitalk',
+      config: {
+        gitalk: hexo.theme.config.gitalk
+      }
+    };
+  }
+
 });
