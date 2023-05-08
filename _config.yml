@@ -41,16 +41,21 @@ ga:
 
 # 百度统计 The baidu web analytics
 baidu_tongji:
-
-# Gittalk 评论组件
-# See: https://github.com/gitalk/gitalk/
-gitalk:
+  
+comment:
   enable: false
-  clientId:
-  clientSecret:
-  repository: # 仓库名
-  owner: # 仓库所有者
-  createIssueManually: false # 如果当前页面没有相应的 isssue 且登录的用户属于 admin，则会自动创建 issue。如果设置为 true，则显示一个初始化页面，创建 issue 需要点击 init 按钮。
+  system: twikoo # 可选 gitalk、twikoo
+  config:
+    gitalk:
+      clientId:
+      clientSecret:
+      repository: # 仓库名
+      owner: # 仓库所有者
+      createIssueManually: false # 如果当前页面没有相应的 isssue 且登录的用户属于 admin，则会自动创建 issue。如果设置为 true，则显示一个初始化页面，创建 issue 需要点击 init 按钮。
+    twikoo:
+      envId: #  腾讯云环境填 envId；Vercel 环境填地址（https://xxx.vercel.app）
+      region: # 环境地域，腾讯云传
+      mark: # 一个twikoo服务端应用于多个内容时，可填写此项
 
 # 底部链接
 bottom_link:

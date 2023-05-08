@@ -57,7 +57,8 @@ hexo.extend.helper.register('js_link', name => {
     'jquery.fancybox': '/js/jquery.fancybox.min.js',
     'theme_main': '/js/main.js',
     'gitalk': '/js/gitalk.min.js',
-    'simple-lightbox': '/js/simple-lightbox.min.js'
+    'simple-lightbox': '/js/simple-lightbox.min.js',
+    'twikoo': '/js/twikoo.min.js'
   };
 
   const boot_js_list = {
@@ -65,7 +66,8 @@ hexo.extend.helper.register('js_link', name => {
     'jquery.fancybox': 'https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js',
     'theme_main': '/js/main.js',
     'gitalk': 'https://cdn.bootcdn.net/ajax/libs/gitalk/1.7.2/gitalk.min.js',
-    'simple-lightbox': 'https://cdn.bootcdn.net/ajax/libs/simplelightbox/2.13.0/simple-lightbox.min.js'
+    'simple-lightbox': 'https://cdn.bootcdn.net/ajax/libs/simplelightbox/2.13.0/simple-lightbox.min.js',
+    'twikoo': 'https://cdn.bootcdn.net/ajax/libs/twikoo/1.6.16/twikoo.min.js'
   };
 
   let path = renderPath(js_list[name] ? js_list[name] : name);
