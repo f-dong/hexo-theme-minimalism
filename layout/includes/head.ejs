@@ -50,8 +50,3 @@
 <% if (page.img && page.img !== '') { %><meta property="og:image" content="<%= full_url_for(page.img) %>"><% } %>
 <link rel="shortcut icon" href="<%= url_for('/favicon.ico') %>">
 <link rel="stylesheet" href="<%= url_for('/style/main.css') %>">
-
-
-<% if (theme.gitalk.enable && is_post()) { %>
-    <link rel="stylesheet" href="<%= css_link('gitalk') %>"/>
-<% } %>

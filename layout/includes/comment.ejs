@@ -3,6 +3,7 @@
 <% } %>
 
 <% if (theme.comment.enable && theme.comment.system === 'gitalk') { %>
+    <link rel="stylesheet" href="<%= css_link('gitalk') %>"/>
     <script src="<%= js_link('gitalk') %>"></script>
     <script>
         const config = <%- JSON.stringify(theme.comment.config.gitalk) %>;
