@@ -3,20 +3,22 @@
 
 // 菜单
 document.querySelector('.menu-switch').addEventListener('click', function() {
+  const menuContainer = document.querySelector('.menu-container');
+
   if (this.classList.contains('icon-menu-outline')) {
-    this.classList.remove('icon-menu-outline');
-    this.classList.add('icon-close-outline');
-    document.querySelector('.menu-container').style.opacity = '1';
-    document.querySelector('.menu-container').style.height = 'auto';
-    document.querySelector('.menu-container').style['z-index'] = 1024;
+    this.classList.replace('icon-menu-outline', 'icon-close-outline');
+    menuContainer.style.opacity = '1';
+    menuContainer.style.height = 'auto';
+    menuContainer.style['z-index'] = '1024';
   } else {
-    this.classList.add('icon-menu-outline');
-    this.classList.remove('icon-close-outline');
-    document.querySelector('.menu-container').style.opacity = '0';
-    document.querySelector('.menu-container').style['z-index'] = '0';
-    const that = this;
+    this.classList.replace('icon-close-outline', 'icon-menu-outline');
+    menuContainer.style.opacity = '0';
+    menuContainer.style['z-index'] = '0';
+
     setTimeout(() => {
-      that.classList.contains('icon-menu-outline') && (document.querySelector('.menu-container').style.height = '0');
+      if (this.classList.contains('icon-menu-outline')) {
+        menuContainer.style.height = '0';
+      }
     }, 600);
   }
 });
