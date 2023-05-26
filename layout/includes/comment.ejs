@@ -1,0 +1,46 @@
+<% if (theme.comment.enable) { %>
+    <div id="gitalk-container"></div>
+<% } %>
+
+<% if (theme.comment.enable && theme.comment.system === 'gitalk') { %>
+    <link rel="stylesheet" href="<%= css_link('gitalk') %>"/>
+    <script src="<%= js_link('gitalk') %>"></script>
+    <script>
+        const config = <%- JSON.stringify(theme.comment.config.gitalk) %>;
+        const gitalk = new Gitalk({
+            clientID: '<%= config.clientId %>',
+            clientSecret: '<%= config.clientSecret %>',
+            repo: '<%= config.repository %>',
+            owner: '<%= config.owner %>',
+            admin: ['<%= config.owner %>'],
+            id: location.pathname.slice(1, location.pathname.lastIndexOf('/')).substring(0, 49),       // Ensure uniqueness and length less than 50
+            distractionFreeMode: false,  // Facebook-like distraction free mode
+            createIssueManually: <%= config.createIssueManually %>
+        });
+
+        gitalk.render('gitalk-container')
+
+    </script>
+<% } %>
+
+
+<% if (theme.comment.enable && theme.comment.system === 'twikoo') { %>
+<script>
+    (function () {
+        const jq = document.createElement('script');
+        jq.src = "<%= js_link('twikoo') %>";
+        document.getElementsByTagName('body')[0].appendChild(jq);
+
+        const config = <%- JSON.stringify(theme.comment.config.twikoo) %>;
+        jq.onload = function () {
+            twikoo.init({
+                envId: config.envId,
+                el: '#gitalk-container',
+                region: config.region,
+                path: location.pathname + (config.mark ? '?mark=' + config.mark : ''),
+                lang: "<%= config.language %>",
+            });
+        }
+    })()
+</script>
+<% } %>
