@@ -147,16 +147,8 @@ function lazyload(imgs, data) {
   });
 }
 
-
-window.addEventListener('DOMContentLoaded', () => {
-  if (window.is_post) {
-    addCopyIcons();
-    setLanguageAttributes();
-    bindScrollEvent();
-    bindClickEvent();
-  }
-
-  // 图片懒加载
+// 图片懒加载
+function lazyloadLoad() {
   if (window.theme_config.image && window.theme_config.image.lazyload_enable) {
     const imgs = document.querySelectorAll('img');
 
@@ -174,4 +166,26 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     };
   }
+}
+
+// 初始化页面
+function themeBoot() {
+  if (window.is_post) {
+    addCopyIcons();
+    setLanguageAttributes();
+    bindScrollEvent();
+    bindClickEvent();
+  }
+
+  lazyloadLoad();
+
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  themeBoot();
+});
+
+// hexo-blog-encrypt See https://github.com/D0n9X1n/hexo-blog-encrypt
+window.addEventListener('hexo-blog-decrypt', e => {
+  themeBoot();
 });
