@@ -186,6 +186,6 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 // hexo-blog-encrypt See https://github.com/D0n9X1n/hexo-blog-encrypt
-window.addEventListener('hexo-blog-decrypt', e => {
+window.addEventListener('hexo-blog-decrypt', () => {
   themeBoot();
 });
