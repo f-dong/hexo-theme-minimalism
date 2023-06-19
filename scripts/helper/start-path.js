@@ -102,6 +102,8 @@ function cdnConfig() {
 function renderPath(path) {
   const config = cdnConfig();
 
+  path = path.replace(/^\//, '');
+
   if (config.enable) {
     switch (config.provider) {
       case 'jsdelivr':
