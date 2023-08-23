@@ -27,9 +27,11 @@
         <div class="post-content">
           <%- page.content %>
         </div>
+          <% if (theme.toc!==false) { %>
         <div class="top-div">
           <%- toc(page.content, {class: 'top-box',list_number:false,max_depth:3}) %>
         </div>
+          <% } %>
       </div>
     </div>
 
