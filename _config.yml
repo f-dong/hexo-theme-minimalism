@@ -36,6 +36,9 @@ contact:
 # 首页头像图片
 avatar: /images/avatar.png
 
+# 站点图标
+favicon: /favicon.ico
+
 # 谷歌统计 跟踪 ID
 ga:
 
