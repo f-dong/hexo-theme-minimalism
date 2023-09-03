@@ -48,5 +48,5 @@
 <meta property="og:title" content="<%= title %>">
 <meta property="og:description" content="<%- description %>">
 <% if (page.img && page.img !== '') { %><meta property="og:image" content="<%= full_url_for(page.img) %>"><% } %>
-<link rel="shortcut icon" href="<%= url_for('/favicon.ico') %>">
+<link rel="shortcut icon" href="<%= url_for(theme.favicon) %>">
 <link rel="stylesheet" href="<%= url_for('/style/main.css') %>">

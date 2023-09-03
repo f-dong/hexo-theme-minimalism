@@ -7,10 +7,10 @@ menu:
     url: /tags
     External: false
     name: 标签
-#  Categories:
-#    url: /categories
-#    External: false
-#    name: 分类
+  #  Categories:
+  #    url: /categories
+  #    External: false
+  #    name: 分类
   Archives:
     url: /archives
     External: false
@@ -36,12 +36,15 @@ contact:
 # 首页头像图片
 avatar: /images/avatar.png
 
+# 站点图标
+favicon: /favicon.ico
+
 # 谷歌统计 跟踪 ID
 ga:
 
 # 百度统计 The baidu web analytics
 baidu_tongji:
-  
+
 comment:
   enable: false
   system: twikoo # 可选 gitalk、twikoo
@@ -80,7 +83,7 @@ image:
   lazyload_enable: true # 图片懒加载
   lazyload_placeholder: # 图片懒加载占位图
   photo_zoom: simple-lightbox # 可选 simple-lightbox、fancybox、false(禁用)
-  
+
 # cdn 配置
 cdn:
   enable: false
