@@ -29,5 +29,6 @@ jobs:
           key: npm-cache
           restore-keys: npm-cache
       - run: npm install
+      - run: npm install hexo-tag-embed
       - run: npx hexo config theme minimalism
       - run: time NODE_ENV=production npx hexo g -b
