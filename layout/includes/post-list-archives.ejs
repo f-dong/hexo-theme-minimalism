@@ -1,9 +1,10 @@
-<% let years = []; page.posts.forEach((item) => { const year = date(item.date, 'YYYY'); if (!years.includes(year)) { years.push(year); } }); %>
+<% let years = []; site.posts.forEach((item) => { const year = date(item.date, 'YYYY'); if (!years.includes(year)) { years.push(year); } }); years.sort(function(a, b){return b-a}) %>
+<% let posts = site.posts.sort('date').reverse() %>
 
 <div class="archives-container">
   <% years.forEach(function(year) { %>
     <h2 class="year"><%= year %></h2>
-    <% page.posts.forEach(function(post) { %>
+    <% posts.forEach(function(post) { %>
       <%if (is_hide(post) === false && date(post.date, 'YYYY') === year) { %>
         <article class="post">
           <a href="<%= url_for(post.path) %>">
