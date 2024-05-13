@@ -59,6 +59,8 @@ hexo.extend.generator.register('index', locals => {
   const { index_generator } = hexo.config;
   locals.posts = locals.posts.sort(index_generator.order_by || '-date');
 
+  locals.posts.data.sort((a, b) => (b.sticky || 0) - (a.sticky || 0));
+
   if (index_generator.per_page > 0) {
     const pagination = require('hexo-pagination');
     return pagination(index_generator.path || '', locals.posts, {
