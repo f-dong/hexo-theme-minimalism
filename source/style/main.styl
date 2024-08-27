@@ -18,10 +18,10 @@
 
 @import "_core/night-node" if hexo-config('dark_theme.enable');
 
-if hexo-config('prismjs')
+if hexo-config('prismjs.enable')
   pre[class*=language-] {
     padding: 0 !important;
-    margin: 0 !important;
+    margin: 0 0 16px 0 !important;
   }
   pre[class*=language-] code {
     color: #476582;
