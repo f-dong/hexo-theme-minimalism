@@ -20,7 +20,6 @@ function merge(target, source) {
 hexo.on('generateBefore', () => {
   merge(hexo.theme.config, hexo.config.theme_config);
 
-  console.log(hexo.config.syntax_highlighter)
   // hexo v7.0.0 新的配置改动
   if (hexo.config.syntax_highlighter) {
     if (hexo.config.syntax_highlighter === 'prismjs') {
