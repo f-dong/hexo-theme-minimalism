@@ -38,11 +38,12 @@
 
 <% if (page.total > 1) { %>
     <div class="pagination-container">
+      <% var lang = config.language || 'zh-CN'; %>
       <% if (page.prev) { %>
-        <a href="<%- url_for(page.prev_link) %>" class="prev"><i class="icon icon-arrow-ios-back-outline"></i> 上一页</a>
+        <a href="<%- url_for(page.prev_link) %>" class="prev"><i class="icon icon-arrow-ios-back-outline"></i> <%= lang === 'en' ? 'Prev' : '上一页' %></a>
       <% } %>
       <% if (page.next) { %>
-        <a href="<%- url_for(page.next_link) %>" class="next">下一页 <i class="icon icon-arrow-ios-forward-outline"></i></a>
+        <a href="<%- url_for(page.next_link) %>" class="next"><%= lang === 'en' ? 'Next' : '下一页' %> <i class="icon icon-arrow-ios-forward-outline"></i></a>
       <% } %>
     </div>
 <% } %>

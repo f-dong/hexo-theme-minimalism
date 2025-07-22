@@ -1,12 +1,13 @@
 <%
+    var lang = config.language || 'zh-CN';
     var title = page.title;
     // tags, categories, about pages title
     if (title === 'tags') {
-        title = '标签 | '+ config.title;
+        title = lang === 'en' ? 'Tags | ' + config.title : '标签 | ' + config.title;
     } else if (title === 'categories') {
-        title = '分类归档 | '+ config.title;
+        title = lang === 'en' ? 'Categories | ' + config.title : '分类归档 | ' + config.title;
     } else if (title === 'about') {
-        title = '关于 | '+ config.title;
+        title = lang === 'en' ? 'About | ' + config.title : '关于 | ' + config.title;
     } else if (!title) {
         title = config.title;
     }
