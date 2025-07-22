@@ -19,7 +19,7 @@ hexo.extend.helper.register('export_config', function() {
   const theme_config = {
     image: image,
     search: search,
-    language: this.config.language,
+    language: this.config.language
   };
 
   const script = `<script id="hexo-configurations">
