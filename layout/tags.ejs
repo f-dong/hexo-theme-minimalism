@@ -3,8 +3,9 @@
 <div class="content-container">
 
   <div class="tags-container">
+    <% var lang = config.language || 'zh-CN'; %>
     <% if (site.tags.length <= 0) { %>
-        <a class="tag" href="">暂无标签</a>
+        <a class="tag" href=""><%= lang === 'en' ? 'No tags yet' : '暂无标签' %></a>
     <% } %>
     <% site.tags.forEach((tag) => { %>
       <a class="tag" href="<%= url_for(tag.path) %>"><%= tag.name %></a>

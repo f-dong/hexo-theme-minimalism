@@ -9,13 +9,17 @@ hexo.extend.helper.register('export_config', function() {
 
   const {theme} = this;
 
-  const { image } = Object.assign({image: {
+  const { image, search } = Object.assign({image: {
     lazyload_enable: true,
     photo_zoom: 'simple-lightbox'
-  }}, theme.config);
+  }, search: {
+    enable: false
+  }}, theme);
 
   const theme_config = {
-    image: image
+    image: image,
+    search: search,
+    language: this.config.language
   };
 
   const script = `<script id="hexo-configurations">
