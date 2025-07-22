@@ -91,3 +91,12 @@ cdn:
   enable: false
   # CDN 提供者
   provider: jsdelivr # 可选 jsdelivr、unpkg、bootcdn
+
+search:
+  enable: false # 是否启用搜索
+  type: algolia   # 可选：json 或 algolia
+  placeholder: 输入关键词搜索...
+  algolia:
+    appID: ''
+    apiKey: ''
+    indexName: ''
